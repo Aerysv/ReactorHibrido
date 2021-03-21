@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierInput version="1.0">
+<vars>
+ <var id="Ca0" deckin="PUBLIC" value="5"/>
+ <var id="Ea1" deckin="PUBLIC" value="52.1"/>
+ <var id="Ea2" deckin="PUBLIC" value="70"/>
+ <var id="Ea3" deckin="PUBLIC" value="65"/>
+ <var id="Operacion" deckin="PUBLIC" value="1"/>
+ <var id="R" deckin="PRIVATE" value="0.00831"/>
+ <var id="T" deckin="PUBLIC" value="20"/>
+ <var id="V" deckin="PRIVATE" value="11.5"/>
+ <var id="dHrxn1" deckin="PUBLIC" value="-28.75"/>
+ <var id="dHrxn2" deckin="PUBLIC" value="-34.5"/>
+ <var id="dHrxn3" deckin="PUBLIC" value="-40.25"/>
+ <var id="k10" deckin="PUBLIC" value="6400000000"/>
+ <var id="k20" deckin="PUBLIC" value="6400000000"/>
+ <var id="k30" deckin="PUBLIC" value="886000000000"/>
+ <var id="q" deckin="PUBLIC" value="1"/>
+</vars>
+</DeckSupplierInput>

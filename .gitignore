@@ -1,5 +1,15 @@
+# Untrack everything
 *
+# Include all directories
 !*/
+# Include .gitignore
 !.gitignore
+# Include all .el files
 !*.el
-!version.el
+# Include all .exp files
+!*.exp
+# Include OPC-DA structures
+!*deck_input_supplier.xml
+!*dka.xml
+# Exclude version.el
+version.el

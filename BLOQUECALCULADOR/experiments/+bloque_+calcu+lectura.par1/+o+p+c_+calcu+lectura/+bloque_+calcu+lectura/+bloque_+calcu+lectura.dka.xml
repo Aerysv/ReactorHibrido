@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierConfig version="5.3">
+<data>
+ <var id="Ca" type="REAL" category="DYNAMIC" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ca'" type="REAL" category="DERIVATIVE" inputUnits="" inputCandidates="" inputValue="0" deckin="NO" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ca0" type="REAL" category="DATA" inputUnits="mol/L" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb" type="REAL" category="DYNAMIC" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cc" type="REAL" category="DYNAMIC" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cd" type="REAL" category="DYNAMIC" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ea1" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="52.1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ea2" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="70" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ea3" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="65" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Operacion" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="P" type="REAL" category="EXPLICIT" inputUnits="W" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="R" type="REAL" category="DATA" inputUnits="kJ/mol/K" inputCandidates="" inputValue="0.00831" deckin="PRIVATE" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="20" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="V" type="REAL" category="DATA" inputUnits="L" inputCandidates="" inputValue="11.5" deckin="PRIVATE" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="dHrxn1" type="REAL" category="DATA" inputUnits="kJ/mol" inputCandidates="" inputValue="-28.75" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="dHrxn2" type="REAL" category="DATA" inputUnits="kJ/mol" inputCandidates="" inputValue="-34.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="dHrxn3" type="REAL" category="DATA" inputUnits="kJ/mol" inputCandidates="" inputValue="-40.25" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="k10" type="REAL" category="DATA" inputUnits="1/min" inputCandidates="" inputValue="6400000000" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="k20" type="REAL" category="DATA" inputUnits="1/min" inputCandidates="" inputValue="6400000000" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="k30" type="REAL" category="DATA" inputUnits="1/min/mol" inputCandidates="" inputValue="886000000000" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="q" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="r1" type="REAL" category="EXPLICIT" inputUnits="mol/L/min" inputCandidates="" inputValue="0" deckin="NO" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="r2" type="REAL" category="EXPLICIT" inputUnits="mol/L/min" inputCandidates="" inputValue="0" deckin="NO" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="r3" type="REAL" category="EXPLICIT" inputUnits="mol/L/min" inputCandidates="" inputValue="0" deckin="NO" deckout="PRIVATE" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="x" type="REAL" category="EXPLICIT" inputUnits="s/u" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+</data>
+<info>
+ <swmode id=""/>
+ <type id="deck_opcda"/>
+ <mode id="manual"/>
+ <usert id="no"/>
+ <usecardpackbinary id="yes"/>
+ <usecardpackfile id="no"/>
+ <uselog id="no"/>
+ <version id="1.0"/>
+ <description id="<center><p><b>Customer Deck Example</b></p><p>This deck has been created as an example of deck generation capabilities</p></center>"/>
+ <supplier id="Universidad de Valladolid"/>
+ <customer id=""/>
+ <subject id=""/>
+ <password id=""/>
+ <featureName id=""/>
+ <platforms id="win32_vc2010"/>
+ <help id="<center><p><b>Usage help</b></p></center><p>This deck includes two tabs:</p><ul><li><b>Information</b>: it contains several data related to deck release.</li> <li><b>Simulation</b>: Input and Output values.</li> </ul> <p>Once the input values have been typed in, click on the <b>play</b> button to execute the calculation. Output values will be updated with their new values. To execute a new calculation, just click the <b>load</b> button, change the input values and click on the <b>play</b> button once again.</p> <p>The simulation can also be stopped and paused.</p>"/>
+ <folders>
+ </folders>
+ <filepaths>
+ </filepaths>
+ <fileswithfolder>
+ </fileswithfolder>
+</info>
+<simulation_settings version="1.0">
+ <setting id="ACTIVE_LOG" value="TRUE"/>
+ <setting id="ACTIVE_OPTIMISE_CODE" value="FALSE"/>
+ <setting id="ACTIVE_PPR_H5" value="FALSE"/>
+ <setting id="ACTIVE_TRACE" value="TRUE"/>
+ <setting id="ACTIVE_WARN" value="TRUE"/>
+ <setting id="DEFAULT_REPORT_SEPARATOR" value="\t"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_ANY_TIME" value="FALSE"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_REFRESH_TIME" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_NAN_INF" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_RANGE_VIOLATION" value="SEV_WARNING"/>
+ <setting id="SETTING_SIM_FORCE_STOP_CINT" value="TRUE"/>
+</simulation_settings>
+<specific_opcda>
+ <name id="Bloque_CalcuLectura"/>
+ <progid id="Bloque_CalcuLectura"/>
+ <clsid id="{8a55c80e-4cad-47e1-baf3-e696c8113b17}"/>
+ <version id="1"/>
+ <description id=""/>
+ <secondscint id="1"/>
+ <startsim id="yes"/>
+ <cint id="1"/>
+ <tstop id="100000000000000"/>
+ <registration id=""/>
+ <copyredist id="no"/>
+ <vars>
+  <var id="Ca" idOpc="Ca" access="r" type="REAL" euLow="" euHigh=""/>
+  <var id="Ca0" idOpc="Ca0" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="Cb" idOpc="Cb" access="r" type="REAL" euLow="" euHigh=""/>
+  <var id="Cc" idOpc="Cc" access="r" type="REAL" euLow="" euHigh=""/>
+  <var id="Cd" idOpc="Cd" access="r" type="REAL" euLow="" euHigh=""/>
+  <var id="Ea1" idOpc="Ea1" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="Ea2" idOpc="Ea2" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="Ea3" idOpc="Ea3" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="Operacion" idOpc="Operacion" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="P" idOpc="P" access="r" type="REAL" euLow="" euHigh=""/>
+  <var id="T" idOpc="T" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="dHrxn1" idOpc="dHrxn1" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="dHrxn2" idOpc="dHrxn2" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="dHrxn3" idOpc="dHrxn3" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="k10" idOpc="k10" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="k20" idOpc="k20" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="k30" idOpc="k30" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="q" idOpc="q" access="rw" type="REAL" euLow="" euHigh=""/>
+  <var id="x" idOpc="x" access="r" type="REAL" euLow="" euHigh=""/>
+ </vars>
+</specific_opcda>
+</DeckSupplierConfig>
