@@ -8,6 +8,8 @@
 !*.el
 # Include all .exp files
 !*.exp
+# Include all .txt files
+!*.txt
 #*/experiments/*/*/
 # Include OPC-DA structures
 !*deck_input_supplier.xml
