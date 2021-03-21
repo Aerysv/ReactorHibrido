@@ -15,8 +15,8 @@ COMPONENT Bloque_CalcuLectura
 
 	DATA
 
-		REAL V = 11.5 					"Volumen del reactor(L)"
-		REAL R = 0.00831     		"Constante de los gases ideales (kJ/mol/K)"
+		REAL V = 11.5					"Volumen del reactor(L)"
+		REAL R = 0.00831				"Constante de los gases ideales (kJ/mol/K)"
 		REAL Ca0 = 5					"Concentración entrada A (mol/L)"
 		-- Parámetros cinéticos
 		REAL k10 = 6.4e9				"Factor preexponencial (1/min)"
@@ -36,10 +36,10 @@ COMPONENT Bloque_CalcuLectura
 	DECLS
 	
 	-- Calculos
-		REAL Ca, Cb, Cc, Cd				"Concentración A (mol/L)"
-		REAL r1, r2, r3					"Velocidad de la reaccion 1 (mol/L/min)"		
+		REAL Ca, Cb, Cc, Cd			"Concentración A (mol/L)"
+		REAL r1, r2, r3				"Velocidad de la reaccion 1 (mol/L/min)"		
 	-- Salidas del bloque Calculador	
-		REAL x 		"conversion (s/u)"	
+		REAL x		"conversion (s/u)"	
 		REAL P		"Potencia proporcionada por la bomba = Calor de reacción (W)"
 				
 	INIT
