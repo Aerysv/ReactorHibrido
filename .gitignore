@@ -8,8 +8,13 @@
 !*.el
 # Include all .exp files
 !*.exp
+*/experiments/*/*/
 # Include OPC-DA structures
 !*deck_input_supplier.xml
 !*dka.xml
+# Exclude experiments subdirectories
+
 # Exclude version.el
 version.el
+# Exclude compiler specific .exp files
+*_.exp
