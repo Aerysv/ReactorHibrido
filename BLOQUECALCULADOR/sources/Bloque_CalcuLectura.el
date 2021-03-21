@@ -24,7 +24,7 @@ COMPONENT Bloque_CalcuLectura
 		REAL k30 = 8.86e11			"Factor preexponencial (1/min/mol)"
 		REAL Ea1 = 52.1				"Energía de activacion kJ/mol"
 		REAL Ea2 = 70.0				"Energía de activacion kJ/mol"
-		REAL Ea3 = 76.0				"Energía de activacion kJ/mol"
+		REAL Ea3 = 65.0				"Energía de activacion kJ/mol"
 		REAL dHrxn1 = -28.75			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn2 = -34.50			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn3 = -40.25			"Calor de reaccion (kJ/mol)"
