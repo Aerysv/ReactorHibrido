@@ -66,6 +66,6 @@ COMPONENT Bloque_CalcuLectura
 	-- Potencia que proporciona la resistencia
 		-- La potencia debe salir en vatios pero el término V*dHrxni*ri tiene unidades L*kJ/mol*mol/L/min = kJ/min
 		-- Se apliCa *1000 para convertir a J y se divide por 60 para convertir a segundos. J/s  = W
-		P = (1000/60)*V*( - dHrxn1*r1 - dHrxn2*r2 - dHrxn3*r3 )
+		P = (1000/60)*V*( - dHrxn1*r1 - dHrxn2*r2 - 2*dHrxn3*r3 )
 				
 END COMPONENT
