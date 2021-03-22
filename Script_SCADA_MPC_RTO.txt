@@ -1,0 +1,233 @@
+{ ========================================== }
+{ = Escritura de los parámetros del bloque calculador =  }
+{ ========================================== }
+
+k0_Estimador = k0_sinexponencial ;
+DH_Estimador = dH1;
+Ea_Estimador = Ea_intouch;
+
+k2_Estimador = k20_sinexponencial ;
+DH2_Estimador = dH2;
+Ea2_Estimador = Ea2_intouch;
+
+k3_Estimador = k30_sinexponencial ;
+DH3_Estimador = dH3;
+Ea3_Estimador = Ea3_intouch;
+
+{ =========================================== }
+{ = Escritura de variables medidas al bloque calculador = }
+{ =========================================== }
+
+qv_Estimador =  Caudal_01;
+T_Estimador = Temp_reactor;
+Ti_Estimador = Temp_tanque_alim;
+
+{ ========================================== }
+{ =========== Animaciones del SCADA =========== }
+{ ========================================== }
+
+IF Valvula_01 > 0.1  THEN
+    Color_tuberia2 = 1;
+ELSE 
+    Color_tuberia2 = 0;
+ENDIF;
+
+IF Bomba_alim1 > 0.1  THEN
+    Color_tuberia1 = 1;
+ELSE 
+    Color_tuberia1 = 0;
+ENDIF;
+
+{ ========================================== }
+{ ========== Programación Experimento ========== }
+{ ========================================== }
+
+IF experimento == 0 THEN
+    Valvula = 100 - Valvula_01;
+ELSE
+    Valvula_01 = 100 - Valvula;
+ENDIF;
+
+{ ========================================== }
+{ ========== Comunicación Amplificador ========== }
+{ ========================================== }
+
+IF autom_ampli == 0 THEN 
+    P = Amp_manual;
+ELSE 
+    P = P_Estimador;
+ENDIF;
+
+I_fase = P/(Sqrt(3)*V_red);
+
+IF P <= 0 THEN
+    V = 0.0;
+ELSE
+    IF P < Sqrt(3)*V_red*9.2 THEN
+        V = 0.007197*I_fase**3 - 0.094370*I_fase**2 + 0.814443*I_fase + 0.067862;
+        {V = 4.52016E-04*I_fase**5 - 1.00192E-02*I_fase**4 + 8.47010E-02*I_fase**3 - 3.36434E-01*I_fase**2 + 1.06362E+00*I_fase - 1.03739E-02;}
+    ELSE
+       IF P  >= Sqrt(3)*V_red*9.2 THEN
+           V = 5;
+       ENDIF;
+     ENDIF;
+ENDIF;
+	
+{ ========================================== }
+{ ============== Filtrado Señales  ============== }
+{ ========================================== }
+
+T_reactor_filtrada = alpha_filtrado*T_reactor_filtrada + (1 - alpha_filtrado)*Temp_reactor;
+T_refrigerante_filtrada = alpha_filtrado*T_refrigerante_filtrada + (1 - alpha_filtrado)*Temp_camisa;
+
+T_reactivos_filtrada = alpha_filtrado*T_reactivos_filtrada + (1 - alpha_filtrado)*Temp_tanque_alim;
+T_refrigerante_ent_filtrada = alpha_filtrado*T_refrigerante_ent_filtrada + (1 - alpha_filtrado)*Temp_ent_camisa;
+
+Caudal_reactivos_filtrada = alpha_filtrado*Caudal_reactivos_filtrada + (1 - alpha_filtrado)*Caudal_01;
+Caudal_refrig_filtrada = alpha_filtrado*Caudal_refrig_filtrada + (1 - alpha_filtrado)* Caudal_refrig;
+
+Ca_filtrada = alpha_filtrado*Ca_filtrada + (1 - alpha_filtrado)*Ca;
+Cb_filtrada = alpha_filtrado*Cb_filtrada + (1 - alpha_filtrado)*Cb;
+
+
+{ ========================================== }
+{ ============ Comunicación MPC  ============= }
+{ ========================================== }
+IF predictivo == 1 THEN
+    IF Tiempo_MPC < 30 THEN
+         SP12 = MPC_uq1;
+         SP22 = MPC_uFr1;
+        Tiempo_MPC = Tiempo_MPC + 1;
+    ELSE
+        IF Tiempo_MPC >= 30 THEN
+            IF ControlFlag == 0 THEN
+                Contador_MHE = Contador_MHE + 1;
+                 IF Contador_MHE == 5 THEN
+                     ControlFlag = 1;
+                 ENDIF;
+            ENDIF;
+            SP12 = MPC_uq1;
+            SP22 = MPC_uFr1;
+            MPC_LiminfT = LiminfT;
+            MPC_LiminfCb = LiminfCb;
+            MPC_Liminfq = Liminfq;
+            MPC_LiminfFr = LiminfFr;
+            MPC_LimsupT = LimsupT;
+            MPC_LimsupCb = LimsupCb;
+            MPC_Limsupq = Limsupq;
+            MPC_LimsupFr = LimsupFr;
+            MPC_Ca = Ca_filtrada;
+            MPC_Cb = Cb_filtrada;
+            MPC_Cb_sp = SP_Concentracion;
+            MPC_ControlFlag = ControlFlag;
+            MPC_T = T_reactor_filtrada;
+            MPC_T0 = T_reactivos_filtrada;
+            MPC_T_sp = SP_Temperatura;
+            MPC_Tc = T_refrigerante_filtrada;
+            MPC_Tc0 = T_refrigerante_ent_filtrada;
+            MPC_beta1 = Beta1;
+            MPC_beta2 = Beta2;
+            MPC_MHE_beta_xN = Beta_xN;
+            MPC_MHE_beta_xv = Beta_xv;
+            MPC_gamma1 = Pesos_T;
+            MPC_gamma2 = Pesos_Cb;
+            MPC_q = Caudal_reactivos_filtrada;
+            MPC_Fr = Caudal_refrig_filtrada;
+            MPC_Ejecutar = 1;
+            MPC_Ejecutar = 0;
+            Tiempo_MPC = 0;
+
+        ENDIF;
+    ENDIF;
+ENDIF;
+{ ========================================== }
+{ ============ Comunicación PID ==============  }
+{ ========================================== }
+
+IF autom12 == 1 THEN
+    {PV12 = Caudal_01;}
+    PV12 = Caudal_reactivos_filtrada;
+    Bomba_alim1 = OP12;
+    OPLO12 = 0;
+    OPHI12 = 600;
+    PVEUHI12 = 1.7;
+    PVEULO12 = 0;
+ENDIF;
+
+IF autom22 == 1 THEN
+    {PV22 = Caudal_refrig;}
+    PV22 = Caudal_refrig_filtrada;
+    Valvula_01 = OP22;
+    Valvula = 100 - Valvula_01;
+    Valvula = 100 - OP22;
+    OPLO22 = 0;
+    OPHI22 = 100;
+    PVEUHI22 = 25;
+    PVEULO22 = 0;
+ENDIF;
+
+IF predictivo == 1 THEN
+    autom12 = 1;
+    autom22 = 1;
+ELSE
+    Contador_MHE = 0;
+    ControlFlag = 0;
+ENDIF;
+
+{ ========================================== }
+{ =========== Actualización Gráficas ============  }
+{ ========================================== }
+
+    HTUpdateToCurrentTime( "HistTrend6" );
+    HistTrend6.UpdateTrend = 1;
+    HTUpdateToCurrentTime( "HistTrend7" );
+    HistTrend7.UpdateTrend = 1;
+    HTUpdateToCurrentTime( "HistTrend8" );
+    HistTrend8.UpdateTrend = 1;
+    HTUpdateToCurrentTime( "HistTrend9" );
+    HistTrend9.UpdateTrend = 1;
+
+     HTUpdateToCurrentTime( "GraficasPID1_Historico" );
+    GraficasPID1_Historico.UpdateTrend = 1;
+     HTUpdateToCurrentTime( "GraficasPID2_Historico" );
+    GraficasPID2_Historico.UpdateTrend = 1;
+
+     HTUpdateToCurrentTime( "GraficasPID1_Historico2" );
+    GraficasPID1_Historico2.UpdateTrend = 1;
+{ ========================================== }
+{ ============ Integración del RTO ============= }
+{ ========================================== }
+
+IF FlagRTO == 1 THEN
+    SP_Temperatura = Temperatura_RTO;
+    SP_Concentracion = Concentracion_RTO;
+ENDIF;
+
+{ ========================================== }
+{ ========= Escritura al bloque Lectura ==========  }
+{ ========================================== }
+{
+Lectura_q = Caudal_01;
+Lectura_qc = Caudal_refrig;
+Lectura_T0 = Temp_tanque_alim;
+Lectura_Tc0 = Temp_ent_camisa;
+Lectura_T = Temp_reactor;
+Lectura_Tc = Temp_camisa;
+Lectura_Ca = Ca;
+Lectura_Cb = Cb;
+Lectura_Cc = Cc;
+Lectura_Cd = Cd;
+Lectura_Cb_sp = SP_Concentracion;
+Lectura_T_sp = SP_Temperatura;
+Lectura_gamma1 =  Pesos_T;
+Lectura_gamma2 = Pesos_Cb;
+Lectura_beta1 = Beta1;
+Lectura_beta2 = Beta2;
+Lectura_AutoMPC = predictivo;
+CostoA = CostoA_SCADA;
+CostoB = CostoB_SCADA;
+CostoC = CostoC_SCADA;
+CostoD = CostoD_SCADA;
+CostoRef = CostoRef_SCADA;
+AutoRTO = FlagRTO;
+}
