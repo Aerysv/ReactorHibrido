@@ -19,36 +19,31 @@ COMPONENT mpcMHE_OPC (INTEGER Nu = 3, INTEGER MV = 2, INTEGER PV = 2, INTEGER Nx
 -- Se miden todas las variables
 
 DATA
-
-	-- Parametros del modelo
-	REAL V = 11.5			"Volumen del reactor (L)"
-	REAL Vc = 1				"Volumen de la camisa (L)"
-	REAL R = 0.00831		"Constante de los gases (kJ/mol/K)"
-	REAL rho = 1			"Densidad del agua (kg/L)"
-	REAL Cp = 4.184		"Capacidad Calorifica del agua (kJ/kg/C)"	
-   REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
-	REAL T0 = 10			"Temperatura de entrada de los reactivos (C)"
-	REAL Tc0 = 10			"Temperatura de entrada de los reactivos (C)"
 	
 	-- Parametros del controlador
 	REAL t_Sample = 0.5	"Tiempo de muestro (min)"
 	REAL Pred_h = 30		"Horizonte de predicción (min)"
 		
 	-- Precios del controlador
-	REAL pA  = 0.5
-	REAL pB  = 5.0
-	REAL pFr = 2.0
+	REAL T_sp = 30
+	REAL Cb_sp = 3.3
+	
 	-- Variables manipuladas
-	REAL beta[2] =  {0.5, 0.5}				"Penalizacion de cambios"
+	REAL beta[2] =  {0.5, 0.5}		"Penalizacion de cambios"
+	REAL gamma[2] = {10, 10}				"Importancia relativa de los setpoint"
 	
 	-- Parámetros estimador
-	REAL margen_v = 0.5       	   "Rango de variación de las perturbaciones"
-	REAL margen_x = 20				"Rango de variación del estado inicial del MHE (%)"	
-	REAL beta_xv = 0.1			   "Peso de las perturbaciones en el costo del MHE"
-	REAL beta_xN = 1					"Peso del estado en t-N en el costo de MHE"
-	REAL v_ini = 0						"Inicializacion vector de perturbaciones"
+	REAL margen_v = 0.5		"Rango de variación de las perturbaciones"
+	REAL margen_x = 20		"Rango de variación del estado inicial del MHE (%)"	
+	REAL beta_xv = 0.1		"Peso de las perturbaciones en el costo del MHE"
+	REAL beta_xN = 1			"Peso del estado en t-N en el costo de MHE"
+	REAL v_ini = 0				"Inicializacion vector de perturbaciones"
 	
 DECLS
+	-- Perturbaciones
+	DISCR REAL T0					"Temperatura de entrada de los reactivos (C)"
+	DISCR REAL Tc0					"Temperatura de entrada de los refrigerante (C)"
+	DISCR REAL Ca0					"Concentración de entrada de A (mol/L)"
 
 	-- Caudales
 	DISCR REAL q                "Caudal reactivos (L/min)"
@@ -80,11 +75,9 @@ DECLS
 	DISCR REAL acc[MV]				-- Valores actuales de las acciones de control
 	DISCR REAL per[Nd]				-- Valores actuales de las perturbaciones medidas
 	DISCR REAL med[Nm]				-- current measurements
-	DISCR REAL J_y_g[3]				-- Función de costo y restricciones
 	DISCR REAL acc_ant[MV*(Ne+1)]		--  Acciones de control medidas pasadas
 	DISCR REAL per_ant[Nd*(Ne+1)]		--  Perturbaciones medidas pasadas
 	DISCR REAL med_ant[Nm*(Ne+1)]		--  past measured variables
-	DISCR REAL J_y_g_ant[3*(Ne+1)]	-- Past cost function and constraints
 	DISCR REAL aux[4]							-- valores auxiliares
 
 	DISCR REAL u_ant[MV*Ne]				-- valores pasados del control aplicado
@@ -95,7 +88,7 @@ DECLS
 	DISCR REAL lim_manip_up[MV], lim_manip_low[MV], lim_con_up[PV], lim_con_low[PV]
 	DISCR REAL uqant				"Accion de control anterior"
 	DISCR REAL uFrant				"Accion de control anterior"
-	DISCR REAL config[5]			"Configuracion del controlador"
+	DISCR REAL config[6]			"Configuracion del controlador"
 	DISCR REAL Pred_hh = 30		"Horizonte de predicción (min)"
 	DISCR REAL error[2]
 	
@@ -157,11 +150,12 @@ INIT
 	med[3] = T
 	med[4] = Tc	
 	
-	config[1] = pA
-	config[2] = pB
-	config[3] = pFr
-	config[4] = beta[1]
-	config[5] = beta[2]
+	config[1] = T_sp
+	config[2] = Cb_sp
+	config[3] = gamma[1]
+	config[4] = gamma[2]
+	config[5] = beta[1]
+	config[6] = beta[2]	
 		
 	q = uq[1]
 	Fr = uFr[1]

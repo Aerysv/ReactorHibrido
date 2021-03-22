@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierConfig version="5.3">
+<data>
+ <var id="Ca" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="3.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="ControlFlag" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Fr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfCb" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0.83" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Liminfq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupCb" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Limsupq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="1.8" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Pred_h" type="REAL" category="DATA" inputUnits="min" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Tc" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Tc0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta_xN" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta_xv" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="gamma[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="10" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="gamma[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="10" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="margen_v" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="margen_x" type="REAL" category="DATA" inputUnits="%" inputCandidates="" inputValue="20" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="q" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+</data>
+<info>
+ <swmode id=""/>
+ <type id="deck_opcua"/>
+ <mode id="auto"/>
+ <usert id="no"/>
+ <usecardpackbinary id="yes"/>
+ <usecardpackfile id="no"/>
+ <uselog id="no"/>
+ <version id="1.0"/>
+ <description id="<center><p><b>Customer Deck Example</b></p><p>This deck has been created as an example of deck generation capabilities</p></center>"/>
+ <supplier id=""/>
+ <customer id=""/>
+ <subject id=""/>
+ <password id=""/>
+ <featureName id=""/>
+ <platforms id="win64_vc2017"/>
+ <help id="<center><p><b>Usage help</b></p></center><p>This deck includes two tabs:</p><ul><li><b>Information</b>: it contains several data related to deck release.</li> <li><b>Simulation</b>: Input and Output values.</li> </ul> <p>Once the input values have been typed in, click on the <b>play</b> button to execute the calculation. Output values will be updated with their new values. To execute a new calculation, just click the <b>load</b> button, change the input values and click on the <b>play</b> button once again.</p> <p>The simulation can also be stopped and paused.</p>"/>
+ <folders>
+ </folders>
+ <filepaths>
+ </filepaths>
+ <fileswithfolder>
+ </fileswithfolder>
+</info>
+<simulation_settings version="1.0">
+</simulation_settings>
+<specific_opcua>
+ <opcuaport id="16703"/>
+</specific_opcua>
+</DeckSupplierConfig>

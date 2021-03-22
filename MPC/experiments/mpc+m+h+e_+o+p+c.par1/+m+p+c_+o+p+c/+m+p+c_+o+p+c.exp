@@ -1,0 +1,119 @@
+EXPERIMENT MPC_OPC ON mpcMHE_OPC.par1
+   DECLS
+   OBJECTS
+   INIT
+   BOUNDS
+   BODY
+	
+	-- constraints MVs
+   lim_manip_low[1] = Liminfq        -- limites  q
+	lim_manip_up[1] = Limsupq
+
+	lim_manip_low[2] = LiminfFr		 -- limites  Fr		
+   lim_manip_up[2] = LimsupFr
+
+	-- Constraints process variables
+	lim_con_up[1]  = LimsupT          -- limites temperatura reactor
+	lim_con_low[1] = LiminfT
+	
+	lim_con_up[2] = LimsupCb           -- limites Cb
+	lim_con_low[2] = LiminfCb
+	
+	-- Llamada al controlador predictivo
+	acc[1] = q
+	acc[2] = Fr
+		
+	per[1] = T0
+	per[2] = Tc0
+		
+	med[1] = Ca 
+	med[2] = Cb									
+	med[3] = T
+	med[4] = Tc	
+		
+	uqant = acc[1]
+	uFrant= acc[2]
+
+	aux[1] = acc[1]
+	aux[2] = acc[2]
+	aux[3] = per[1]
+	aux[4] = per[2]
+
+	-- Actualizar el vector de acciones de control
+	FOR(i IN 1, MV)
+		FOR (j IN 1,Ne)
+			acc_ant[MV*(j-1)+i] = acc_ant[MV*j+i]
+		END FOR		
+		acc_ant[MV*Ne+i] = acc[i]
+	END FOR			
+		
+	-- Actualizar el vector de perturbaciones medidas
+	FOR(i IN 1, Nd)
+		FOR (j IN 1,Ne)
+			per_ant[Nd*(j-1)+i] = per_ant[Nd*j+i]
+		END FOR		
+		per_ant[Nd*Ne+i] = per[i]
+	END FOR		
+		
+	-- actualizar vector de medidas
+	FOR (i IN 1,Nm)
+		FOR (j IN 1,Ne)
+			med_ant[Nm*(j-1)+i] = med_ant[Nm*j+i]
+		END FOR
+		med_ant[Nm*Ne+i] = med[i]
+	END FOR	
+	
+-- actualizar estados anteriores			
+
+	FOR (i IN 1,Nx)
+		FOR (j IN 1,Ne-1)
+			x_ant[i,j] = x_ant[i,j+1]
+		END FOR
+		x_ant[i,Ne] = state[i]
+	END FOR	
+		
+	FOR (i IN 1,Nx)
+		x_Ne[i] = x_ant[i,1]
+	END FOR	
+		
+-- 	actualizar controles anteriores aplicados	
+
+	FOR (i IN 1,MV)
+		FOR (j IN 1,Ne-1)
+			u_ant[MV*(j-1)+i] = u_ant[MV*j+i]
+		END FOR
+		u_ant[MV*(Ne-1)+i] = u_new[i]
+	END FOR
+					
+	IF (ControlFlag == TRUE) THEN
+	
+		config[1] = T_sp
+		config[2] = Cb_sp
+		config[3] = gamma[1]
+		config[4] = gamma[2]
+		config[5] = beta[1]
+		config[6] = beta[2]	
+		
+		Pred_hh = Pred_h
+				
+		-- Estimar y recoger los estados y perturbaciones
+		estadoMHE.mhe (t_Sample, x_Ne, acc_ant, per_ant, med_ant,  u_ant,  margen_v,  margen_x,  beta_xv, beta_xN,  state, v_new, error )
+				
+		-- Calcular y recoger la nueva señal de control
+		modeloCON.control (t_Sample, Pred_hh, state, aux, v_new, error, lim_manip_low, lim_manip_up, lim_con_low, lim_con_up, config, u_new )
+
+		FOR (i IN 1,Nu)
+			uq[i] = u_new[MV*(i-1)+1]
+			uFr[i] = u_new[MV*(i-1)+2]
+		END FOR	
+		
+		ControlFlag = FALSE
+	END IF
+	
+	q = uq[1]
+	Fr = uFr[1]
+	
+	INTEG()
+	TIME = 0
+	TSTOP = 0
+END EXPERIMENT
