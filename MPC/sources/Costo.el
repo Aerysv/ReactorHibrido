@@ -47,16 +47,16 @@ DATA
 	REAL dHrxn3 = -47.3443562
 	REAL alpha = 1.54979214
 		*/
-			REAL k10 = 6.4e9 "Factor preexponencial (1/min)"
-	REAL k20 = 4.84e10 "Factor preexponencial (1/min)"
-	REAL k30 = 8.86e11 "Factor preexponencial (1/min/mol)"
-	REAL Ea1 = 52.1 "Energía de activacion kJ/mol"
-	REAL Ea2 = 70.0 "Energía de activacion kJ/mol"
-	REAL Ea3 = 65.0 "Energía de activacion kJ/mol"
-	REAL dHrxn1 = -28.75 "Calor de reaccion (kJ/mol)"
-	REAL dHrxn2 = -34.50 "Calor de reaccion (kJ/mol)"
-	REAL dHrxn3 = -40.25 "Calor de reaccion (kJ/mol)"
-	REAL alpha = 1.8
+	REAL Ea1 = 58.9922611
+	REAL Ea2 = 77.6157046
+	REAL Ea3 = 71.1106314
+	REAL alpha = 1.59324467
+	REAL dHrxn1 = -21.2199341
+	REAL dHrxn2 = -2.68152145
+	REAL dHrxn3 = -66.5367189
+	REAL k10 = 9.94755854e+10
+	REAL k20 = 9.98553963e+11
+	REAL k30 = 9.99263023e+12
 	-- Parametros del controlador
 	REAL T_sp = 40
 	REAL Cb_sp = 0.4
