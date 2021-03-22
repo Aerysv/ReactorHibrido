@@ -16,6 +16,8 @@
 !*dka.xml
 # Untrack subdirectories in OPC servers
 */experiments/*/*/*/*/
+# Untrack autocode folder
+*/autocode/
 # Untrack version.el
 version.el
 # Untrack compiler specific _.exp files
