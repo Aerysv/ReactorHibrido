@@ -33,19 +33,7 @@ DATA
 	REAL rho = 1			"Densidad del agua (kg/L)"
 	REAL Cp = 4.184		"Capacidad calorifica del agua (kJ/kg/C)"	
    REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
-	/*
-	-- Parametros estimados
-	REAL k10 = 2.77278263e+10
-	REAL k20 = 2.95155307e+11
-	REAL k30 = 2.96918831e+12
-	REAL Ea1 = 58.7887775
-	REAL Ea2 = 75.335899
-	REAL Ea3 = 73.8049428
-	REAL dHrxn1 = -21.096637
-	REAL dHrxn2 = -26.1608589
-	REAL dHrxn3 = -47.3443562
-	REAL alpha = 1.54979214
-	*/
+
 	REAL Ea1 = 58.9922611
 	REAL Ea2 = 77.6157046
 	REAL Ea3 = 71.1106314
@@ -222,6 +210,7 @@ CONTINUOUS
 
 		J_costo_m =  ( (Ca/Ca_m -1)**2 + (Cb/Cb_m -1)**2 + \
 						 (T/T_m -1)**2 + (Tc/Tc -1)**2 )  
+		-- OJO DEBERÍA SER Tc_m  Y NO Tc
 		--J_costo_m = ((Ca_m - Ca)/(5))**2 + ((Cb_m - Cb)/(5))**2 + \
 		--				((T_m - T)/(40))**2 + ((Tc_m - Tc)/(10))**2
 		J_costo_N =  (Ca_N/Ca_Ne -1)**2 + (Cb_N/Cb_Ne -1)**2 + \

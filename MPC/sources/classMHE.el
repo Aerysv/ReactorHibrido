@@ -274,16 +274,9 @@ CLASS estimMHE IS_A CostoMHE_par1
 		   	TIME = 0           --  Tiempo del modelo
 		
 		-- Inicializacion del algoritmo de integracion y cálculo de sensibilidades
-		-- Inicializacion del algoritmos de optimización
-		-- SINTAXIS:
-		-- iniciarRes( tiempo inicial desde el que calcular las sensibilidades, puntero a la función de residuos definida previamente )
-		-- iniciarQuad( número de cuadraturas a calcular, puntero al cálculo de las funciones de cuadratura )
 			calculoSens.iniciarRes(TIME, funcionResiduos)    
-		--	calculoSens.iniciarRes(TIME, ptrRes)
-			calculoSens.iniciarQuad(numC + 1, funcionQuadraturas)  
-		--	calculoSens.iniciarQuad(numC + 1, ptrQuad)
+			calculoSens.iniciarQuad(numC + 1, funcionQuadraturas) 
 		   calculoSens.setTol( 1e-06 )
-
 
    	--Optimization extern routine call
 			setSilentMode(TRUE)
@@ -318,15 +311,11 @@ CLASS estimMHE IS_A CostoMHE_par1
 					v[i] = pert[i]
 			END FOR		
 			
-			Ca_N = dec_var[5]		
-			Cb_N = dec_var[6]	
-			T_N  = dec_var[7]		
-			Tc_N = dec_var[8]	
+			Ca_N = dec_var[5]
+			Cb_N = dec_var[6]
+			T_N  = dec_var[7]
+			Tc_N = dec_var[8]
 								
---			FOR (i IN 1,numX)
---				x_ant[i] = dec_var[i+numX]
---			END FOR
-
       	TSTOP = t_mhe*Ne  -- hasta t
       	CINT = t_mhe  --t_Sample
 		  	TIME = 0        --  Tiempo del modelo
@@ -345,7 +334,10 @@ CLASS estimMHE IS_A CostoMHE_par1
 			
 		
 			WRITE ("\n\n\t\t------------------- salida de mhe \n")
-			WRITE ("\t\t:\tCa %g \tCa_m %g \tCa_N %g \tpert[1] %g \tstate[1] %g \n",Ca, Ca_m, Ca_N, pert[1],state[1])	
+			WRITE ("\t\t:\tCa %g \tCa_m %g \tCa_N %g \tpert[1] %g \tstate[1] %g \n",Ca, Ca_m, Ca_N, pert[1],state[1])
+			WRITE ("\t\t:\tCb %g \tCb_m %g \tCb_N %g \tpert[2] %g \tstate[2] %g \n",Cb, Cb_m, Cb_N, pert[2],state[2])	
+			WRITE ("\t\t:\tT %g \tT_m %g \tT_N %g \tpert[3] %g \tstate[3] %g \n",T, T_m, T_N, pert[3],state[3])	
+			WRITE ("\t\t:\tTc %g \tTc_m %g \tTc_N %g \tpert[4] %g \tstate[4] %g \n",Tc, Tc_m, Tc_N, pert[4],state[4])	
 			WRITE ("\t\t:\tJ_costo %g \tJ_costo_m %g \tJ_costo_N %g \tJ_costo_v %g \tbeta_xv %g \n",J_costo, J_costo_m, J_costo_N, J_costo_v, beta_xv)
 
 		END METHOD
