@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierInput version="1.0">
+<vars>
+ <var id="Ca" deckin="PUBLIC" value="0.2"/>
+ <var id="LiminfCb" deckin="PUBLIC" value="0"/>
+ <var id="LiminfFr" deckin="PUBLIC" value="4"/>
+ <var id="LiminfT" deckin="PUBLIC" value="5"/>
+ <var id="Liminfq" deckin="PUBLIC" value="0.3"/>
+ <var id="LimsupCb" deckin="PUBLIC" value="5"/>
+ <var id="LimsupFr" deckin="PUBLIC" value="15"/>
+ <var id="LimsupT" deckin="PUBLIC" value="60"/>
+ <var id="Limsupq" deckin="PUBLIC" value="1.2"/>
+ <var id="T" deckin="PUBLIC" value="30"/>
+ <var id="T0" deckin="PUBLIC" value="15"/>
+ <var id="Tc0" deckin="PUBLIC" value="15"/>
+ <var id="pA" deckin="PUBLIC" value="0.5"/>
+ <var id="pB" deckin="PUBLIC" value="5"/>
+ <var id="pFr" deckin="PUBLIC" value="0.3"/>
+</vars>
+</DeckSupplierInput>

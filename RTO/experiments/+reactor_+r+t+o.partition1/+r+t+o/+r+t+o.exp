@@ -1,0 +1,94 @@
+USE OPTIM_METHODS
+FUNCTION INTEGER coste_y_restricciones(IN REAL esnopt_x[], IN INTEGER needF, OUT REAL esnopt_F[], IN INTEGER explicit_derivatives, IN INTEGER needG, OUT REAL esnopt_G[])
+
+BODY
+
+    --RESET_VARIABLES ()
+
+    q  = esnopt_x[1]
+    Fr = esnopt_x[2]
+
+    SET_INIT_ACTIVE(TRUE)        
+    REL_ERROR = 1.0e-16
+    TIME  = 0
+    TSTOP = 0
+    INTEG()
+
+    esnopt_F[1] = F_optim[1]
+    esnopt_F[2] = F_optim[2]
+    esnopt_F[3] = F_optim[3]
+
+     --WRITE ("costeyrestriciones2 ffinal: %f %f %f %f %f\n", esnopt_F[1], esnopt_F[2], esnopt_F[3], esnopt_F[4], esnopt_F[5])
+
+    RETURN 0
+END FUNCTION
+
+EXPERIMENT RTO ON Reactor_RTO.partition1
+   DECLS
+		REAL numU = 2
+		REAL numC = 2
+		REAL param_estim[2]      -- variables de decision, size n_dec_var    
+		REAL xlow[2]            -- valor inferior de las variables de decision, size n_dec_var
+		REAL xupp[2]            -- valor superior de las variables de decision, size n_dec_var
+		REAL Flow[3]            -- valor inferior de la funcion objetivo y las restricciones, size n_total 
+		REAL Fupp[3]            -- valor superior de la funcion objetivo y las restricciones, size n_total
+
+   OBJECTS
+   INIT
+   BOUNDS
+   BODY
+
+   	--  Formar vector de variables de decisión
+		param_estim[1] = q
+		param_estim[2] = Fr
+
+		--  Limites de las variables de decision
+		xlow[1] = Liminfq
+		xupp[1] = Limsupq
+		
+		xlow[2] = LiminfFr
+		xupp[2] = LimsupFr
+
+		-- Restricciones
+		Flow[1] = -1e50
+		Fupp[1] =  1e50
+
+		Flow[2] = LiminfT
+		Fupp[2] = LimsupT
+
+		Flow[3] = LiminfCb
+		Fupp[3] = LimsupCb
+	
+		--Optimization extern routine call
+		setSilentMode(TRUE)
+		SET_REPORT_ACTIVE("#MONITOR",FALSE)
+  
+		esnopt_init(numU, numC)
+		esnopt_set_variables_bounds_and_initial_values(xlow, xupp, param_estim)
+		esnopt_set_constraints_bounds_and_initial_values(Flow, Fupp, F_optim)   
+		esnopt_set_cost_function_and_constraints(coste_y_restricciones)
+		esnopt_set_explicit_derivatives(0)
+		esnopt_set_function_precision(1.0e-8)
+		esnopt_set_iterations_limit(1000) 
+		esnopt_print_data()
+		esnopt()
+
+		esnopt_get_variables_values(param_estim)
+		esnopt_free()    
+
+		setSilentMode(FALSE)
+		SET_REPORT_ACTIVE("#MONITOR",TRUE)	    
+
+		q = param_estim[1]
+		Fr = param_estim[2]
+
+		WRITE("\n\n\n\n\Caudal de reactivos: %f ", q)
+		WRITE("\nCaudal de refrigerante: %f ", Fr)	
+
+		SET_INIT_ACTIVE(TRUE)
+		REL_ERROR = 1.0e-16
+		TIME = 0
+		TSTOP =0
+		INTEG()
+
+END EXPERIMENT

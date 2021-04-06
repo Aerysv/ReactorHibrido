@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierConfig version="5.3">
+<data>
+ <var id="Ca" type="REAL" category="ALGEBRAIC" inputUnits="mol/L" inputCandidates="" inputValue="0.2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb" type="REAL" category="EXPLICIT" inputUnits="mol/L" inputCandidates="" inputValue="3" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cc" type="REAL" category="EXPLICIT" inputUnits="mol/L" inputCandidates="" inputValue="0.3" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cd" type="REAL" category="EXPLICIT" inputUnits="mol/L" inputCandidates="" inputValue="0.2" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Fr" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="7" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="J_costo" type="REAL" category="EXPLICIT" inputUnits="" inputCandidates="" inputValue="0" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfCb" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfFr" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="4" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfT" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Liminfq" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupCb" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupFr" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LimsupT" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Limsupq" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1.2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T" type="REAL" category="ALGEBRAIC" inputUnits="C" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T0" type="REAL" category="DATA" inputUnits="C" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Tc" type="REAL" category="EXPLICIT" inputUnits="C" inputCandidates="" inputValue="20" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Tc0" type="REAL" category="DATA" inputUnits="C" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="pA" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="pB" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="pFr" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="q" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1.2" deckin="NO" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+</data>
+<info>
+ <swmode id=""/>
+ <type id="deck_opcua"/>
+ <mode id="auto"/>
+ <usert id="no"/>
+ <usecardpackbinary id="yes"/>
+ <usecardpackfile id="no"/>
+ <uselog id="no"/>
+ <version id="1.0"/>
+ <description id="<center><p><b>Customer Deck Example</b></p><p>This deck has been created as an example of deck generation capabilities</p></center>"/>
+ <supplier id=""/>
+ <customer id=""/>
+ <subject id=""/>
+ <password id=""/>
+ <featureName id=""/>
+ <platforms id="win64_vc2017"/>
+ <help id="<center><p><b>Usage help</b></p></center><p>This deck includes two tabs:</p><ul><li><b>Information</b>: it contains several data related to deck release.</li> <li><b>Simulation</b>: Input and Output values.</li> </ul> <p>Once the input values have been typed in, click on the <b>play</b> button to execute the calculation. Output values will be updated with their new values. To execute a new calculation, just click the <b>load</b> button, change the input values and click on the <b>play</b> button once again.</p> <p>The simulation can also be stopped and paused.</p>"/>
+ <folders>
+ </folders>
+ <filepaths>
+ </filepaths>
+ <fileswithfolder>
+ </fileswithfolder>
+</info>
+<simulation_settings version="1.0">
+ <setting id="ACTIVE_LOG" value="TRUE"/>
+ <setting id="ACTIVE_OPTIMISE_CODE" value="FALSE"/>
+ <setting id="ACTIVE_PPR_H5" value="FALSE"/>
+ <setting id="ACTIVE_TRACE" value="TRUE"/>
+ <setting id="ACTIVE_WARN" value="TRUE"/>
+ <setting id="DEFAULT_REPORT_SEPARATOR" value="\t"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_ANY_TIME" value="FALSE"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_REFRESH_TIME" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_NAN_INF" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_RANGE_VIOLATION" value="SEV_WARNING"/>
+ <setting id="SETTING_SIM_FORCE_STOP_CINT" value="TRUE"/>
+</simulation_settings>
+<specific_opcua>
+ <opcuaport id="16704"/>
+</specific_opcua>
+</DeckSupplierConfig>
