@@ -29,16 +29,16 @@ COMPONENT Ajuste_6estados (INTEGER nsal = 6)
       REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
 		
    	-- Variables de decisión
-		REAL k10_estim = 6.4e9				"Factor preexponencial (1/min)"
-		REAL k20_estim = 4.84e10			"Factor preexponencial (1/min)"
-		REAL k30_estim = 8.86e11			"Factor preexponencial (1/min/mol)"
+		REAL k10_estim = 6.4				"Factor preexponencial (1/min)"
+		REAL k20_estim = 4.84			"Factor preexponencial (1/min)"
+		REAL k30_estim = 8.86			"Factor preexponencial (1/min/mol)"
 		REAL Ea1 = 52.1				"Energía de activacion kJ/mol"
 		REAL Ea2 = 70.0				"Energía de activacion kJ/mol"
 		REAL Ea3 = 65.0				"Energía de activacion kJ/mol"
 		REAL dHrxn1 = -28.75			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn2 = -34.50			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn3 = -40.25			"Calor de reaccion (kJ/mol)"
-		REAL alpha = 1.2197
+		REAL alpha = 1.8197
 		REAL y_ini[6] = {23.5, 14, 3.5, 0.4, 0.11, 0.57}
 	
 		-- Optimizador

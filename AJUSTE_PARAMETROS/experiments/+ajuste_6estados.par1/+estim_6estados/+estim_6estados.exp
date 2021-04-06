@@ -294,7 +294,7 @@ EXPERIMENT Estim_6estados ON Ajuste_6estados.par1
 			Flow[i] = 0
 			Fupp[i] = 0
 		END FOR
-					
+				
 		-- Representacion en el monitor de los valores previos a la optimizacion
 		WRITE ("\n\n\t\t------------------- limits before optimization \n")
 		FOR ( i IN 1,numU )
@@ -339,12 +339,12 @@ EXPERIMENT Estim_6estados ON Ajuste_6estados.par1
 		Ea2	 = dec_var[8]
 		Ea3	 = dec_var[9]
 		alpha  = dec_var[10]
-		/*
-		FOR(i IN 1,6)
-			y_ini[i] = dec_var[10+i]
-		END FOR
-		*/
 		
+		--FOR(i IN 1,6)
+		--	y_ini[i] = dec_var[10+i]
+		--END FOR
+		--
+
 		-- Llamada al integrador
       TIME = 0
 		TSTOP = t_simulacion
