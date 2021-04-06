@@ -89,25 +89,49 @@ Caudal_refrig_filtrada = alpha_filtrado*Caudal_refrig_filtrada + (1 - alpha_filt
 Ca_filtrada = alpha_filtrado*Ca_filtrada + (1 - alpha_filtrado)*Ca;
 Cb_filtrada = alpha_filtrado*Cb_filtrada + (1 - alpha_filtrado)*Cb;
 
+{ =============================================== }
+{ ============ Comunicación MPC y RTO ============= }
+{ =============================================== }
+J_CostoReal = (Caudal_01*(CostoB_SCADA*Cb - CostoA_SCADA*ca0_Estimador) - CostoRef_SCADA*Caudal_refrig );
+IF FlagRTO == 1 THEN
+    predictivo = 1;
+ENDIF;
 
-{ ========================================== }
-{ ============ Comunicación MPC  ============= }
-{ ========================================== }
 IF predictivo == 1 THEN
-    IF Tiempo_MPC < 30 THEN
-         SP12 = MPC_uq1;
-         SP22 = MPC_uFr1;
-        Tiempo_MPC = Tiempo_MPC + 1;
-    ELSE
-        IF Tiempo_MPC >= 30 THEN
-            IF ControlFlag == 0 THEN
-                Contador_MHE = Contador_MHE + 1;
-                 IF Contador_MHE == 5 THEN
-                     ControlFlag = 1;
-                 ENDIF;
+    autom12 = 1;
+    autom22 = 1;
+    Tiempo_MPC = Tiempo_MPC + 1;
+    IF Tiempo_MPC == 29 AND FlagRTO == 1 THEN
+        {Enviar variables al RTO y ejecutarlo}
+        RTO_pA = CostoA_SCADA;
+        RTO_pB = CostoB_SCADA;
+        RTO_pFr = CostoRef_SCADA;
+        RTO_LiminfT = LiminfT;
+        RTO_LiminfCb = LiminfCb;
+        RTO_Liminfq = Liminfq;
+        RTO_LiminfFr = LiminfFr;
+        RTO_LimsupT = LimsupT;
+        RTO_LimsupCb = LimsupCb;
+        RTO_Limsupq = Limsupq;
+        RTO_LimsupFr = LimsupFr;
+        RTO_T0 = T_reactivos_filtrada;
+        RTO_Tc0 = T_refrigerante_ent_filtrada;
+        RTO_Ejecutar = 1;
+        RTO_Ejecutar = 0;
+	ENDIF;
+    IF Tiempo_MPC == 30 THEN
+        IF ControlFlag == 0 THEN
+            {Recogida de datos para el MHE}
+            Contador_MHE = Contador_MHE + 1;
+            IF Contador_MHE >= 5 THEN
+                ControlFlag = 1;
             ENDIF;
-            SP12 = MPC_uq1;
-            SP22 = MPC_uFr1;
+		ENDIF;
+        IF ControlFlag == 1 THEN
+            {Leer RTO, Enviar variables MPC y ejecutarlo}
+            SP_Concentracion = RTO_Cb;
+            SP_Temperatura = RTO_T;
+            CostoRTO = RTO_J_costo;
             MPC_LiminfT = LiminfT;
             MPC_LiminfCb = LiminfCb;
             MPC_Liminfq = Liminfq;
@@ -135,10 +159,21 @@ IF predictivo == 1 THEN
             MPC_Fr = Caudal_refrig_filtrada;
             MPC_Ejecutar = 1;
             MPC_Ejecutar = 0;
-            Tiempo_MPC = 0;
-
+        ENDIF;
+	ENDIF;
+    IF Tiempo_MPC == 31 THEN
+        {Leer MPC, reiniciar contador}
+		Tiempo_MPC = 0;
+        IF ControlFlag == 1 THEN
+            SP12 = MPC_uq1;
+            SP22 = MPC_uFr1;
         ENDIF;
     ENDIF;
+ENDIF;
+IF predictivo == 0 THEN
+    Contador_MHE = 0;
+    Tiempo_MPC = 0;
+    ControlFlag = 0;
 ENDIF;
 { ========================================== }
 { ============ Comunicación PID ==============  }
@@ -166,14 +201,6 @@ IF autom22 == 1 THEN
     PVEULO22 = 0;
 ENDIF;
 
-IF predictivo == 1 THEN
-    autom12 = 1;
-    autom22 = 1;
-ELSE
-    Contador_MHE = 0;
-    ControlFlag = 0;
-ENDIF;
-
 { ========================================== }
 { =========== Actualización Gráficas ============  }
 { ========================================== }
@@ -194,14 +221,6 @@ ENDIF;
 
      HTUpdateToCurrentTime( "GraficasPID1_Historico2" );
     GraficasPID1_Historico2.UpdateTrend = 1;
-{ ========================================== }
-{ ============ Integración del RTO ============= }
-{ ========================================== }
-
-IF FlagRTO == 1 THEN
-    SP_Temperatura = Temperatura_RTO;
-    SP_Concentracion = Concentracion_RTO;
-ENDIF;
 
 { ========================================== }
 { ========= Escritura al bloque Lectura ==========  }
