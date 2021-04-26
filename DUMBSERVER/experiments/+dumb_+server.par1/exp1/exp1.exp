@@ -1,0 +1,17 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: DUMBSERVER
+ COMPONENT: Dumb_Server
+ PARTITION: par1
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 26/04/2021
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Dumb_Server.par1
+   DECLS
+   OBJECTS
+   INIT
+   BOUNDS
+   BODY
+
+END EXPERIMENT

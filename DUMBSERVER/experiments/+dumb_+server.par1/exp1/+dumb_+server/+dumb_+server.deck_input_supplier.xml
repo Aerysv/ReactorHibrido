@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierInput version="1.0">
+<vars>
+ <var id="Lectura_Bomba" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Ca" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Cb" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Cb_sp" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Cc" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Cd" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_FlagMA" deckin="PUBLIC" value="FALSE"/>
+ <var id="Lectura_FlagMPC" deckin="PUBLIC" value="FALSE"/>
+ <var id="Lectura_FlagRTO" deckin="PUBLIC" value="FALSE"/>
+ <var id="Lectura_Fr" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts00" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts01" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts02" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts03" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts04" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_In_Volts06" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_OP12" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_OP22" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Out_Volts00" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Out_Volts01" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Out_Volts02" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_PV12" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_PV22" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Qrxn" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_SP12" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_SP22" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_T" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_T0" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_T_sp" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Tc" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Tc0" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_Valvula" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_beta1" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_beta2" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_gamma1" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_gamma2" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_mu_J" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_mu_g1" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_mu_g2" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_pA" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_pB" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_pFr" deckin="PUBLIC" value="0"/>
+ <var id="Lectura_q" deckin="PUBLIC" value="0"/>
+</vars>
+</DeckSupplierInput>

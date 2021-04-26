@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DeckSupplierConfig version="5.3">
+<data>
+ <var id="Lectura_Bomba" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Ca" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Cb" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Cb_sp" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Cc" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Cd" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_FlagMA" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_FlagMPC" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_FlagRTO" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Fr" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts00" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts01" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts02" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts03" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts04" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_In_Volts06" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_OP12" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_OP22" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Out_Volts00" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Out_Volts01" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Out_Volts02" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_PV12" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_PV22" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Qrxn" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_SP12" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_SP22" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_T" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_T0" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_T_sp" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Tc" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Tc0" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_Valvula" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_beta1" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_beta2" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_gamma1" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_gamma2" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_mu_J" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_mu_g1" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_mu_g2" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_pA" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_pB" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_pFr" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Lectura_q" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+</data>
+<info>
+ <swmode id=""/>
+ <type id="deck_opcua"/>
+ <mode id="auto"/>
+ <usert id="no"/>
+ <usecardpackbinary id="yes"/>
+ <usecardpackfile id="no"/>
+ <uselog id="no"/>
+ <version id="1.0"/>
+ <description id="<center><p><b>Customer Deck Example</b></p><p>This deck has been created as an example of deck generation capabilities</p></center>"/>
+ <supplier id=""/>
+ <customer id=""/>
+ <subject id=""/>
+ <password id=""/>
+ <featureName id=""/>
+ <platforms id="win64_vc2017"/>
+ <help id="<center><p><b>Usage help</b></p></center><p>This deck includes two tabs:</p><ul><li><b>Information</b>: it contains several data related to deck release.</li> <li><b>Simulation</b>: Input and Output values.</li> </ul> <p>Once the input values have been typed in, click on the <b>play</b> button to execute the calculation. Output values will be updated with their new values. To execute a new calculation, just click the <b>load</b> button, change the input values and click on the <b>play</b> button once again.</p> <p>The simulation can also be stopped and paused.</p>"/>
+ <folders>
+ </folders>
+ <filepaths>
+ </filepaths>
+ <fileswithfolder>
+ </fileswithfolder>
+</info>
+<simulation_settings version="1.0">
+ <setting id="ACTIVE_LOG" value="TRUE"/>
+ <setting id="ACTIVE_OPTIMISE_CODE" value="TRUE"/>
+ <setting id="ACTIVE_PPR_H5" value="FALSE"/>
+ <setting id="ACTIVE_TRACE" value="TRUE"/>
+ <setting id="ACTIVE_WARN" value="TRUE"/>
+ <setting id="DEFAULT_REPORT_SEPARATOR" value="\t"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_ANY_TIME" value="FALSE"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_REFRESH_TIME" value="SEV_KILLPOINT"/>
+ <setting id="SETTING_SIM_DETECT_NAN_INF" value="SEV_KILLPOINT"/>
+ <setting id="SETTING_SIM_DETECT_RANGE_VIOLATION" value="SEV_KILLPOINT"/>
+ <setting id="SETTING_SIM_FORCE_STOP_CINT" value="TRUE"/>
+</simulation_settings>
+<specific_opcua>
+ <opcuaport id="16705"/>
+</specific_opcua>
+</DeckSupplierConfig>

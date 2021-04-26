@@ -225,7 +225,7 @@ ENDIF;
 { ========================================== }
 { ========= Escritura al bloque Lectura ==========  }
 { ========================================== }
-{
+{ === Señales de la planta === }
 Lectura_q = Caudal_01;
 Lectura_qc = Caudal_refrig;
 Lectura_T0 = Temp_tanque_alim;
@@ -236,17 +236,50 @@ Lectura_Ca = Ca;
 Lectura_Cb = Cb;
 Lectura_Cc = Cc;
 Lectura_Cd = Cd;
+Lectura_Qrxn = P;
+Lectura_Bomba = Bomba_alim1;
+Lectura_Valvula = Valvula_01;
+
+{ === DAQ === }
+Lectura_In_Volts00 = In_Volts00;
+Lectura_In_Volts01 = In_Volts01;
+Lectura_In_Volts02 = In_Volts02;
+Lectura_In_Volts03 = In_Volts03;
+Lectura_In_Volts04 = In_Volts04;
+Lectura_In_Volts06 = In_Volts06;
+Lectura_Out_Volts00 = Out_Volts00;
+Lectura_Out_Volts01 = Out_Volts01;
+Lectura_Out_Volts02 = Out_Volts02;
+
+{ === Control === }
+Lectura_pA = CostoA_SCADA;
+Lectura_pB = CostoB_SCADA;
+Lectura_pFr = CostoRef_SCADA;
+Lectura_beta1 = Beta1;
+Lectura_beta2 = Beta2;
+
+{ === PID1 - Reactivos === }
+Lectura_SP12 = SP12;
+Lectura_PV12 = PV12;
+Lectura_OP12 = OP12;
+
+{ === PID2 - Refrigerante === }
+Lectura_SP22 = SP22;
+Lectura_PV22 = PV22;
+Lectura_OP22 = OP22;
+
+{ === FLAGS === }
+Lectura_FlagMPC = predictivo;
+
+{ === Específico MPC-RTO === }
+Lectura_FlagRTO = FlagRTO;
 Lectura_Cb_sp = SP_Concentracion;
 Lectura_T_sp = SP_Temperatura;
 Lectura_gamma1 =  Pesos_T;
 Lectura_gamma2 = Pesos_Cb;
-Lectura_beta1 = Beta1;
-Lectura_beta2 = Beta2;
-Lectura_AutoMPC = predictivo;
-CostoA = CostoA_SCADA;
-CostoB = CostoB_SCADA;
-CostoC = CostoC_SCADA;
-CostoD = CostoD_SCADA;
-CostoRef = CostoRef_SCADA;
-AutoRTO = FlagRTO;
-}
+
+{ === Específico MPC-MA === }
+Lectura_FlagMA = FlagMA;
+Lectura_mu_J = MPC_mu_J;
+Lectura_mu_g1 = MPC_mu_g1;
+Lectura_mu_g2 = MPC_mu_g2;
