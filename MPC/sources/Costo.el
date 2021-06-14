@@ -32,8 +32,8 @@ DATA
 	REAL rho = 1			"Densidad del agua (kg/L)"
 	REAL Cp = 4.184		"Capacidad Calorifica del agua (kJ/kg/C)"	
    REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
-	REAL T0 = 10			"Temperatura de entrada de los reactivos (C)"
-	REAL Tc0 = 10			"Temperatura de entrada de los reactivos (C)"
+	REAL T0 = 23			"Temperatura de entrada de los reactivos (C)"
+	REAL Tc0 = 23			"Temperatura de entrada de los reactivos (C)"
 	/*
 	-- Parametros estimados
 	REAL k10 = 2.77278263e+10
@@ -64,15 +64,15 @@ DATA
 	REAL beta[2] =  {0.1, 0.1}	"Penalizacion de cambios"
 	REAL t_Sample = 0.5			"Tiempo de muestro (min)"
 	REAL Liminfq = 0.3			"Límite inferior q (L/min)"
-	REAL Limsupq = 2				"Límite superior q (L/min)"
-	REAL LiminfFr = 0.83			"Límite inferior Fr (L/min)"
+	REAL Limsupq = 1.2				"Límite superior q (L/min)"
+	REAL LiminfFr = 5			"Límite inferior Fr (L/min)"
 	REAL LimsupFr = 15			"Límite superior Fr (L/min)"
 	REAL LiminfT = 5				"Límite inferior T (C)"
 	REAL LimsupT = 60				"Límite superior T (C)"
 	REAL LiminfCb = 0				"Límite inferior Cb (mol/L)"
 	REAL LimsupCb = 5				"Límite superior Cb (mol/L)"
 	
-	REAL Sig = 8	"Parametro de la Sigmoide" 
+	REAL Sig = 100	"Parametro de la Sigmoide" 
 	
 DECLS
 

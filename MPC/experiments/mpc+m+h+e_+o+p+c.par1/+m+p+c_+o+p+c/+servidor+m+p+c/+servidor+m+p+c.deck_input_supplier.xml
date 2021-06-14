@@ -14,7 +14,7 @@
  <var id="LimsupFr" deckin="PUBLIC" value="15"/>
  <var id="LimsupT" deckin="PUBLIC" value="60"/>
  <var id="Limsupq" deckin="PUBLIC" value="1.2"/>
- <var id="Pred_h" deckin="PUBLIC" value="30"/>
+ <var id="Pred_h" deckin="PUBLIC" value="60"/>
  <var id="T" deckin="PUBLIC" value="0"/>
  <var id="T0" deckin="PUBLIC" value="0"/>
  <var id="T_sp" deckin="PUBLIC" value="30"/>

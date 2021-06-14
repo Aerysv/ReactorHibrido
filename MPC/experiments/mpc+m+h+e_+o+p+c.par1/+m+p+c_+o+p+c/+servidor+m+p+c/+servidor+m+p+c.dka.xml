@@ -14,7 +14,7 @@
  <var id="LimsupFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LimsupT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Limsupq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="1.2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Pred_h" type="REAL" category="DATA" inputUnits="min" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Pred_h" type="REAL" category="DATA" inputUnits="min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>

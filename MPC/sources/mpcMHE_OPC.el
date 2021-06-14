@@ -22,7 +22,7 @@ DATA
 	
 	-- Parametros del controlador
 	REAL t_Sample = 0.5	"Tiempo de muestro (min)"
-	REAL Pred_h = 30		"Horizonte de predicción (min)"
+	REAL Pred_h = 60		"Horizonte de predicción (min)"
 		
 	-- Precios del controlador
 	REAL T_sp = 30
@@ -89,7 +89,7 @@ DECLS
 	DISCR REAL uqant				"Accion de control anterior"
 	DISCR REAL uFrant				"Accion de control anterior"
 	DISCR REAL config[6]			"Configuracion del controlador"
-	DISCR REAL Pred_hh = 30		"Horizonte de predicción (min)"
+	DISCR REAL Pred_hh = 60		"Horizonte de predicción (min)"
 	DISCR REAL error[2]
 	
 -- Acciones de control

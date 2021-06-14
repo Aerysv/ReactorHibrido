@@ -46,9 +46,9 @@ DATA
 	REAL k30 = 9.99263023e+12
 	-- Parametros del MHE
 	REAL t_Sample = 0.5				"Tiempo de muestro (min)"
-	REAL uq[Ne] = 1.75
-	REAL uFr[Ne] = 8.51
-	REAL Sig = 8      "Parametro de la Sigmoide" 
+	REAL uq[Ne] = 0.9
+	REAL uFr[Ne] = 9
+	REAL Sig = 100      "Parametro de la Sigmoide" 
 
 	REAL Liminfq = 0.3
 	REAL Limsupq = 2
@@ -64,16 +64,16 @@ DATA
 	REAL ty[1] = 0 	
 	REAL tz[1] = 0
 	-- Medidas de las acciones de control
-	REAL tq[Ne+1] = 1.2		"Valores pasados de medidas de q para tabla"
-	REAL tFr[Ne+1] = 7		"Valores pasados de medidas de Fr para tabla"
+	REAL tq[Ne+1] = 0.9		"Valores pasados de medidas de q para tabla"
+	REAL tFr[Ne+1] = 9		"Valores pasados de medidas de Fr para tabla"
 	-- Medidas de las perturbaciones medidas
-	REAL tT0[Ne+1] = 10		"Valores pasados de medidas de T0 para tabla"
-	REAL tTc0[Ne+1] = 10		"Valores pasados de medidas de Tc0 para tabla"
+	REAL tT0[Ne+1] = 23		"Valores pasados de medidas de T0 para tabla"
+	REAL tTc0[Ne+1] = 23		"Valores pasados de medidas de Tc0 para tabla"
 	-- Estados medidos
-	REAL tCa[Ne+1]= 0.55		"Valores pasados de medidas de Ca para tabla"
-	REAL tCb[Ne+1]= 0.44		"Valores pasados de medidas de Cb para tabla"
-	REAL tT[Ne+1]= 45			"Valores pasados de medidas de T para tabla"
-	REAL tTc[Ne+1]= 15.59	"Valores pasados de medidas de Tc para tabla"
+	REAL tCa[Ne+1]= 0.05		"Valores pasados de medidas de Ca para tabla"
+	REAL tCb[Ne+1]= 2.6		"Valores pasados de medidas de Cb para tabla"
+	REAL tT[Ne+1]= 35			"Valores pasados de medidas de T para tabla"
+	REAL tTc[Ne+1]= 28	"Valores pasados de medidas de Tc para tabla"
 				
 	REAL beta_xv = 0.1		"Importancia de las perturbaciones en el estimador"
 	REAL beta_xN = 0.1		"Importancia de las variables medidas en el estimador"

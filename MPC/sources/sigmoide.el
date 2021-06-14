@@ -7,10 +7,6 @@
 -----------------------------------------------------------------------------------------*/
 
 FUNCTION REAL sigmoide( REAL EQUIS, REAL CENTRO, REAL SIGMA)
-//	DECLS
-//		REAL Z
 	BODY
-//		Z = (1 / (1 + exp(-(EQUIS- CENTRO) * SIGMA)))
-//		RETURN Z
-		RETURN (1 / (1 + exp(-(EQUIS- CENTRO)/60 * SIGMA)))
+		RETURN (1 / (1 + exp(-(EQUIS- CENTRO) * SIGMA)))
 END FUNCTION
