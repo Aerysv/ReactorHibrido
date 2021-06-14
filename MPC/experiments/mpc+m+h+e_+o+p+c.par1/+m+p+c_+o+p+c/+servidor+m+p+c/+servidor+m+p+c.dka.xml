@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <DeckSupplierConfig version="5.3">
 <data>
- <var id="Ca" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Cb" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Cb_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="3.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ca" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0.05" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="2.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="2.6" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="ControlFlag" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Fr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LiminfCb" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
@@ -15,24 +15,24 @@
  <var id="LimsupT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Limsupq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="1.2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Pred_h" type="REAL" category="DATA" inputUnits="min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="T" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="35" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="T_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Tc" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="T_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="35" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Tc" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="25" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Tc0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="beta[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="beta[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="beta_xN" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="beta_xv" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta_xv" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.01" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="gamma[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="10" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="gamma[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="10" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="margen_v" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="margen_v" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="margen_x" type="REAL" category="DATA" inputUnits="%" inputCandidates="" inputValue="20" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="q" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="state[1]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="state[2]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="state[3]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="state[4]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[1]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0.05" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[2]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="2.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[3]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="35" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[4]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="25" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="uFr[1]" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="9" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="uq[1]" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0.9" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="v_new[1]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>

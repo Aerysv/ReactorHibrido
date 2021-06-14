@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <DeckSupplierInput version="1.0">
 <vars>
- <var id="Ca" deckin="PUBLIC" value="0"/>
- <var id="Cb" deckin="PUBLIC" value="0"/>
- <var id="Cb_sp" deckin="PUBLIC" value="3.3"/>
+ <var id="Ca" deckin="PUBLIC" value="0.05"/>
+ <var id="Cb" deckin="PUBLIC" value="2.5"/>
+ <var id="Cb_sp" deckin="PUBLIC" value="2.6"/>
  <var id="ControlFlag" deckin="PUBLIC" value="FALSE"/>
  <var id="Fr" deckin="PUBLIC" value="0"/>
  <var id="LiminfCb" deckin="PUBLIC" value="0"/>
@@ -15,24 +15,24 @@
  <var id="LimsupT" deckin="PUBLIC" value="60"/>
  <var id="Limsupq" deckin="PUBLIC" value="1.2"/>
  <var id="Pred_h" deckin="PUBLIC" value="60"/>
- <var id="T" deckin="PUBLIC" value="0"/>
+ <var id="T" deckin="PUBLIC" value="35"/>
  <var id="T0" deckin="PUBLIC" value="0"/>
- <var id="T_sp" deckin="PUBLIC" value="30"/>
- <var id="Tc" deckin="PUBLIC" value="0"/>
+ <var id="T_sp" deckin="PUBLIC" value="35"/>
+ <var id="Tc" deckin="PUBLIC" value="25"/>
  <var id="Tc0" deckin="PUBLIC" value="0"/>
- <var id="beta[1]" deckin="PUBLIC" value="2"/>
- <var id="beta[2]" deckin="PUBLIC" value="2"/>
+ <var id="beta[1]" deckin="PUBLIC" value="0.5"/>
+ <var id="beta[2]" deckin="PUBLIC" value="0.5"/>
  <var id="beta_xN" deckin="PUBLIC" value="1"/>
- <var id="beta_xv" deckin="PUBLIC" value="0.1"/>
+ <var id="beta_xv" deckin="PUBLIC" value="0.01"/>
  <var id="gamma[1]" deckin="PUBLIC" value="10"/>
  <var id="gamma[2]" deckin="PUBLIC" value="10"/>
- <var id="margen_v" deckin="PUBLIC" value="0.5"/>
+ <var id="margen_v" deckin="PUBLIC" value="15"/>
  <var id="margen_x" deckin="PUBLIC" value="20"/>
  <var id="q" deckin="PUBLIC" value="0"/>
- <var id="state[1]" deckin="PUBLIC" value="0"/>
- <var id="state[2]" deckin="PUBLIC" value="0"/>
- <var id="state[3]" deckin="PUBLIC" value="0"/>
- <var id="state[4]" deckin="PUBLIC" value="0"/>
+ <var id="state[1]" deckin="PUBLIC" value="0.05"/>
+ <var id="state[2]" deckin="PUBLIC" value="2.5"/>
+ <var id="state[3]" deckin="PUBLIC" value="35"/>
+ <var id="state[4]" deckin="PUBLIC" value="25"/>
  <var id="uFr[1]" deckin="PUBLIC" value="9"/>
  <var id="uq[1]" deckin="PUBLIC" value="0.9"/>
  <var id="v_new[1]" deckin="PUBLIC" value="0"/>

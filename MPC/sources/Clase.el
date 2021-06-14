@@ -81,7 +81,7 @@ CLASS optimizCON IS_A Costo_par1
 				calculoSens.iniciarRes(TIME, funcionResiduos)
 				calculoSens.iniciarQuad(numC + 1, funcionQuadraturas)
 				
-				calculoSens.setTol( 1e-06 )
+				calculoSens.setTol( 1e-05 )
 				
 		END METHOD
 
@@ -252,7 +252,7 @@ CLASS optimizCON IS_A Costo_par1
 		-- iniciarQuad( número de cuadraturas a calcular, puntero al cálculo de las funciones de cuadratura )
 			calculoSens.iniciarRes(TIME, funcionResiduos)    
 			calculoSens.iniciarQuad(numC + 1, funcionQuadraturas)  
-		   calculoSens.setTol( 1e-06 )
+		   calculoSens.setTol( 1e-05 )
 
 		-- inicialización de los límites de las restricciones y la función de coste
 			Flow[1] = -1.0e10
@@ -272,8 +272,8 @@ CLASS optimizCON IS_A Costo_par1
 			esnopt_set_constraints_bounds_and_initial_values (Flow, Fupp, F_optim)
 			esnopt_set_cost_function_and_constraints (coste_y_restricciones)
 			esnopt_set_explicit_derivatives ( calcularSens )
-			esnopt_set_function_precision ( 1.0e-6 )
-			esnopt_set_iterations_limit (500) 
+			esnopt_set_function_precision ( 1.0e-5 )
+			esnopt_set_iterations_limit (200) 
 			infoESnopt = esnopt ()
 
 		-- Final de la optimización, obtención de los resultados para la simulación.

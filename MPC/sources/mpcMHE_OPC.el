@@ -29,13 +29,13 @@ DATA
 	REAL Cb_sp = 2.6
 	
 	-- Variables manipuladas
-	REAL beta[2] =  {2, 2}		"Penalizacion de cambios"
+	REAL beta[2] =  {0.5, 0.5}		"Penalizacion de cambios"
 	REAL gamma[2] = {10, 10}				"Importancia relativa de los setpoint"
 	
 	-- Parámetros estimador
-	REAL margen_v = 0.5		"Rango de variación de las perturbaciones"
+	REAL margen_v = 15		"Rango de variación de las perturbaciones"
 	REAL margen_x = 20		"Rango de variación del estado inicial del MHE (%)"	
-	REAL beta_xv = 0.1		"Peso de las perturbaciones en el costo del MHE"
+	REAL beta_xv = 0.01		"Peso de las perturbaciones en el costo del MHE"
 	REAL beta_xN = 1			"Peso del estado en t-N en el costo de MHE"
 	REAL v_ini = 0				"Inicializacion vector de perturbaciones"
 	
@@ -73,7 +73,7 @@ DECLS
 	DISCR REAL state[4] = {0.05, 2.5, 35, 25}				--  estimated (state) variables (+ algebraic)
 	DISCR REAL u_new[MV*Nu]      	--  Vector of decision variables computed by the MPC + slacks
 	DISCR REAL v_new[Nx] = 0   			--  valores estimados de las perturbaciones
-	DISCR REAL acc[MV]				-- Valores actuales de las acciones de control
+	DISCR REAL acc[MV] 				-- Valores actuales de las acciones de control
 	DISCR REAL per[Nd]				-- Valores actuales de las perturbaciones medidas
 	DISCR REAL med[Nm]				-- current measurements
 	DISCR REAL acc_ant[MV*(Ne+1)]		--  Acciones de control medidas pasadas
@@ -83,12 +83,12 @@ DECLS
 
 	DISCR REAL u_ant[MV*Ne]				-- valores pasados del control aplicado
 	DISCR REAL x_ant[Nx,Ne]				--  valores de los estados del modelo en el periodo anterior
-	DISCR REAL x_Ne[Nx]					-- Estimated state at t- Ne
+	DISCR REAL x_Ne[4] = {0.05, 2.5, 35, 25}					-- Estimated state at t- Ne
 	
 -- Upper and lower bounds of the manipulated and controlled variables	
 	DISCR REAL lim_manip_up[MV], lim_manip_low[MV], lim_con_up[PV], lim_con_low[PV]
-	DISCR REAL uqant				"Accion de control anterior"
-	DISCR REAL uFrant				"Accion de control anterior"
+	DISCR REAL uqant = 0.9				"Accion de control anterior"
+	DISCR REAL uFrant = 0				"Accion de control anterior"
 	DISCR REAL config[6]			"Configuracion del controlador"
 	DISCR REAL Pred_hh = 60		"Horizonte de predicción (min)"
 	DISCR REAL error[2] = 0
@@ -102,7 +102,4 @@ OBJECTS
 	optimizCON modeloCON
 	estimMHE   estadoMHE
 		
-INIT
-
-
 END COMPONENT

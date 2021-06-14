@@ -35,8 +35,8 @@ DATA
 	REAL rho = 1			"Densidad del agua (kg/L)"
 	REAL Cp = 4.184		"Capacidad Calorifica del agua (kJ/kg/C)"	
    REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
-	REAL T0 = 23			"Temperatura de entrada de los reactivos (C)"
-	REAL Tc0 = 23			"Temperatura de entrada de los reactivos (C)"
+	REAL T0 = 24			"Temperatura de entrada de los reactivos (C)"
+	REAL Tc0 = 24			"Temperatura de entrada de los reactivos (C)"
 	
 	-- Parametros usados
 	
@@ -50,10 +50,21 @@ DATA
 	REAL dHrxn2 = -34.50 "Calor de reaccion (kJ/mol)"
 	REAL dHrxn3 = -40.25 "Calor de reaccion (kJ/mol)"
 	REAL alpha = 1.8
-
+	/*
+	REAL Ea1 = 58.9922611
+	REAL Ea2 = 77.6157046
+	REAL Ea3 = 71.1106314
+	REAL alpha = 1.59324467
+	REAL dHrxn1 = -21.2199341
+	REAL dHrxn2 = -2.68152145
+	REAL dHrxn3 = -66.5367189
+	REAL k10 = 9.94755854e+10
+	REAL k20 = 9.98553963e+11
+	REAL k30 = 9.99263023e+12
+	*/
 	-- Parametros del controlador
 	REAL t_Sample = 0.5				"Tiempo de muestro (min)"
-	REAL Pred_h = 30
+	REAL Pred_h = 60
 	
 	REAL Liminfq = 0.3
 	REAL Limsupq = 1.2
@@ -66,7 +77,7 @@ DATA
 	
 	-- Consignas
 	REAL T_sp = 35
-	REAL Cb_sp = 2.7
+	REAL Cb_sp = 2.6
 	REAL gamma[2] = {10, 10}				"Importancia relativa de los setpoint"
 	-- Variables manipuladas
 	REAL beta[2] =  {2, 2}				"Penalizacion de cambios"
@@ -76,7 +87,7 @@ DATA
 	REAL margen_x = 20				"Rango de variación del estado inicial del MHE (%)"	
 	REAL beta_xv = 0.1			   "Peso de las perturbaciones en el costo del MHE"
 	REAL beta_xN = 1					"Peso del estado en t-N en el costo de MHE"
-	REAL v_ini = 0						"Inicializacion vector de perturbaciones"
+	REAL v_ini = 0.001						"Inicializacion vector de perturbaciones"
 	
 DECLS
 

@@ -58,8 +58,8 @@ DATA
 	REAL k20 = 9.98553963e+11
 	REAL k30 = 9.99263023e+12
 	-- Parametros del controlador
-	REAL T_sp = 40
-	REAL Cb_sp = 0.4
+	REAL T_sp = 35
+	REAL Cb_sp = 2.6
 	REAL gamma[2] = {1, 1}		"Importancia relativa de los setpoint"
 	REAL beta[2] =  {0.1, 0.1}	"Penalizacion de cambios"
 	REAL t_Sample = 0.5			"Tiempo de muestro (min)"
@@ -98,45 +98,45 @@ DECLS
 -- Variables del estimador de estados
 	DISCR REAL v[Nx] = 0	"Perturbaciones estimadas"
 	-- Estados iniciales estimador
-	DISCR REAL Ca_inic = 0.55	"Concentración inicial de A (mol/L)"
-	DISCR REAL Cb_inic = 0.44	"Concentración inicial de B (mol/L)"
-	DISCR REAL T_inic = 45		"Temperatura inicial del reactor (C)"
-	DISCR REAL Tc_inic = 15.59	"Temperatura inicial del refrigerante (C)"
-	DISCR REAL error[2]			"Error final del MHE"
+	DISCR REAL Ca_inic = 0.05	"Concentración inicial de A (mol/L)"
+	DISCR REAL Cb_inic = 2.6	"Concentración inicial de B (mol/L)"
+	DISCR REAL T_inic = 35		"Temperatura inicial del reactor (C)"
+	DISCR REAL Tc_inic = 28	"Temperatura inicial del refrigerante (C)"
+	DISCR REAL error[2] = 0			"Error final del MHE"
 -- Acciones de control
-	DISCR REAL uq[Nu] = 1.2		"Caudal de reactivos (L/min)"
+	DISCR REAL uq[Nu] = 0.9		"Caudal de reactivos (L/min)"
 	DISCR REAL uFr[Nu] = 9		"Caudal de refrigerante (L/min)"
 	DISCR REAL uqant, uFrant	"Acciones de control pasadas (L/min)"
 	
 INIT
-		
-      Ca = Ca_inic
-      Cb = Cb_inic
-      T = T_inic
-      Tc = Tc_inic
-		
+
+	Ca = Ca_inic
+	Cb = Cb_inic
+	T = T_inic
+	Tc = Tc_inic
+
 CONTINUOUS
 		-- Discretización de las acciones de control
 		q = uq[1] + (uq[2]-uq[1])*sigmoide(TIME,t_Sample,Sig) + (uq[3]-uq[2])*sigmoide(TIME,2*t_Sample,Sig)
 		Fr = uFr[1] + (uFr[2]-uFr[1])*sigmoide(TIME,t_Sample,Sig) + (uFr[3]-uFr[2])*sigmoide(TIME,2*t_Sample,Sig)
 		
-	-- Balances de materia 
 		V*Ca' = q*(Ca0 - Ca) + V*(-r1 - 2*r3) + v[1]
-		V*Cb' = -q*Cb + V*( r1 -   r2) + v[2]
+		V*Cb' = -q*Cb + V*(r1 - r2) + v[2]
 		
 		r1 = k10*exp(-Ea1/(R*(T+273.15)))*Ca
 		r2 = k20*exp(-Ea2/(R*(T+273.15)))*Cb
 		r3 = k30*exp(-Ea3/(R*(T+273.15)))*Ca**2
 		
-	-- Balances de energia
+		-- Balances de energía
 		-- Reactor
-		V*T' = q*(T0 - T) + (- Q + Heat_rxn)/(rho*Cp)	+ v[3]
+		rho*Cp*V*T' = q*rho*Cp*(T0 - T) - Q + Heat_rxn	+ v[3]
 		-- Camisa
-		Vc*Tc' = Fr*(Tc0 - Tc) + Q/(rho*Cp) + v[4]
+		rho*Cp*Vc*Tc' = Fr*rho*Cp*(Tc0 - Tc) + Q + v[4]
 		-- Transferencia de calor
 		Q = UA*(T - Tc)
-		UA = alpha*Fr**0.8
-		-- Calor generado por la reaccion
+		--UA = alpha
+		UA = alpha*(Fr**0.8)
+		-- Calor generado por la reacción
 		Heat_rxn = V*( - dHrxn1*r1 - dHrxn2*r2 - 2*dHrxn3*r3 )
 	
 		J_setpoints = gamma[1]*((T + error[1] - T_sp)/(LimsupT-LiminfT))**2 + gamma[2]*((Cb + error[2] - Cb_sp)/(LimsupCb - LiminfCb))**2

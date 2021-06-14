@@ -187,37 +187,36 @@ CONTINUOUS
     	T_m =  tMedT.interp1D(SPLINE,SPLINE,TIME)	
     	Tc_m = tMedTc.interp1D(SPLINE,SPLINE,TIME)	
 		
-		-- Balances de materia 
 		V*Ca' = q*(Ca0 - Ca) + V*(-r1 - 2*r3) + v[1]
-		V*Cb' = -q*Cb + V*( r1 -   r2) + v[2]
-		
+		V*Cb' = -q*Cb + V*(r1 - r2) + v[2]
+
 		r1 = k10*exp(-Ea1/(R*(T+273.15)))*Ca
 		r2 = k20*exp(-Ea2/(R*(T+273.15)))*Cb
 		r3 = k30*exp(-Ea3/(R*(T+273.15)))*Ca**2
 		
-		-- Balances de energia
+		-- Balances de energía
 		-- Reactor
-		V*T' = q*(T0 - T) + (- Q + Heat_rxn)/(rho*Cp) + v[3]
+		rho*Cp*V*T' = q*rho*Cp*(T0 - T) - Q + Heat_rxn + v[3]
 		-- Camisa
-		Vc*Tc' = Fr*(Tc0 - Tc) + Q/(rho*Cp) + v[4]
+		rho*Cp*Vc*Tc' = Fr*rho*Cp*(Tc0 - Tc) + Q + v[4]
 		-- Transferencia de calor
 		Q = UA*(T - Tc)
-		UA = alpha*Fr**0.8
-		-- Calor generado por la reaccion
+		--UA = alpha
+		UA = alpha*(Fr**0.8)
+		-- Calor generado por la reacción
 		Heat_rxn = V*( - dHrxn1*r1 - dHrxn2*r2 - 2*dHrxn3*r3 )
 		
 -- Costo MHE
 
-		J_costo_m =  ( (Ca/Ca_m -1)**2 + (Cb/Cb_m -1)**2 + \
-						 (T/T_m -1)**2 + (Tc/Tc_m -1)**2 )  
-		-- OJO DEBERÍA SER Tc_m  Y NO Tc
+		--J_costo_m =  ( (Ca/Ca_m -1)**2 + 10*(Cb/Cb_m -1)**2 + \
+		--				 10*(T/T_m -1)**2 + (Tc/Tc_m -1)**2 )
+		J_costo_m =  100*(Cb/Cb_m -1)**2 + 100*(T/T_m-1)**2
 		--J_costo_m = ((Ca_m - Ca)/(5))**2 + ((Cb_m - Cb)/(5))**2 + \
 		--				((T_m - T)/(40))**2 + ((Tc_m - Tc)/(10))**2
 		J_costo_N =  (Ca_N/Ca_Ne -1)**2 + (Cb_N/Cb_Ne -1)**2 + \
 			 	    (T_N/T_Ne -1)**2 + (Tc_N/Tc_Ne -1)**2
-		--J_costo_N = 0
-		--J_costo_v =  SUM(i IN 1,Nx; (v[i] - v_ant[i])**2)
-		J_costo_v =  SUM(i IN 1, Nx; (v[i])**2)
+		J_costo_v =  SUM(i IN 1,Nx; (v[i] - v_ant[i])**2)
+		--J_costo_v =  SUM(i IN 1, Nx; (v[i])**2)
 		
 		J_costo =   100*J_costo_m + beta_xN* J_costo_N + beta_xv*J_costo_v  
 	

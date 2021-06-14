@@ -89,7 +89,7 @@ CLASS estimMHE IS_A CostoMHE_par1
 				calculoSens.iniciarRes(TIME, funcionResiduos)
 				calculoSens.iniciarQuad(numC + 1, funcionQuadraturas)
 				
-				calculoSens.setTol( 1e-06 )
+				calculoSens.setTol( 1e-05 )
 				
 		END METHOD
 
@@ -200,7 +200,6 @@ CLASS estimMHE IS_A CostoMHE_par1
 
 					FOR(i IN 1, numX)
 				    	dec_var[i]= pert[i]
-						--dec_var[i] = 0.01
 						dec_var[numX + i]= x_ant[i]
 					END FOR
 				
@@ -276,7 +275,7 @@ CLASS estimMHE IS_A CostoMHE_par1
 		-- Inicializacion del algoritmo de integracion y cálculo de sensibilidades
 			calculoSens.iniciarRes(TIME, funcionResiduos)    
 			calculoSens.iniciarQuad(numC + 1, funcionQuadraturas) 
-		   calculoSens.setTol( 1e-06 )
+		   calculoSens.setTol( 1e-05 )
 
    	--Optimization extern routine call
 			setSilentMode(TRUE)
@@ -287,8 +286,8 @@ CLASS estimMHE IS_A CostoMHE_par1
 			esnopt_set_constraints_bounds_and_initial_values (Flow, Fupp, F_optim)
 			esnopt_set_cost_function_and_constraints (coste_y_restricciones)
 			esnopt_set_explicit_derivatives ( calcularSens )
-			esnopt_set_function_precision ( 1.0e-6 )
-			esnopt_set_iterations_limit (500) 
+			esnopt_set_function_precision ( 1.0e-5 )
+			esnopt_set_iterations_limit (200) 
 			infoESnopt = esnopt ()
 
 		-- Final de la optimización, obtención de los resultados para la simulación.
@@ -332,7 +331,6 @@ CLASS estimMHE IS_A CostoMHE_par1
 			  	error_y[i]= error[i]
 			END FOR				
 			
-		
 			WRITE ("\n\n\t\t------------------- salida de mhe \n")
 			WRITE ("\t\t:\tCa %g \tCa_m %g \tCa_N %g \tpert[1] %g \tstate[1] %g \n",Ca, Ca_m, Ca_N, pert[1],state[1])
 			WRITE ("\t\t:\tCb %g \tCb_m %g \tCb_N %g \tpert[2] %g \tstate[2] %g \n",Cb, Cb_m, Cb_N, pert[2],state[2])	

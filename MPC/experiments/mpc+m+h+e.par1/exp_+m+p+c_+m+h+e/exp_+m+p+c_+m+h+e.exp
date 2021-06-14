@@ -31,7 +31,7 @@ EXPERIMENT exp_MPC_MHE ON mpcMHE.par1
 
       -- simulate a transient in range[TIME,TSTOP] reporting at every CINT
       TIME = 0
-      TSTOP = 30
+      TSTOP = 60
       CINT = 0.1
       INTEG()
 END EXPERIMENT
