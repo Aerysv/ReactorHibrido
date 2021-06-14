@@ -63,7 +63,7 @@ CLASS optimizCON IS_A Costo_par1
 			OBJECTS
 				VECTOR_STRING nombresX
 			BODY
-
+	
 				FOR (i IN 1,Nu)
 					calculoSens.addU( "uq["+integerToString(i)+"]", uq[i], FALSE)
 					calculoSens.addU( "uFr["+integerToString(i)+"]", uFr[i], FALSE)

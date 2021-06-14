@@ -35,8 +35,8 @@ DATA
 	REAL rho = 1			"Densidad del agua (kg/L)"
 	REAL Cp = 4.184		"Capacidad Calorifica del agua (kJ/kg/C)"	
    REAL Ca0 = 5			"Concentracion de entrada de A (mol/L)"
-	REAL T0 = 10			"Temperatura de entrada de los reactivos (C)"
-	REAL Tc0 = 10			"Temperatura de entrada de los reactivos (C)"
+	REAL T0 = 23			"Temperatura de entrada de los reactivos (C)"
+	REAL Tc0 = 23			"Temperatura de entrada de los reactivos (C)"
 	
 	-- Parametros usados
 	
@@ -56,8 +56,8 @@ DATA
 	REAL Pred_h = 30
 	
 	REAL Liminfq = 0.3
-	REAL Limsupq = 2
-	REAL LiminfFr = 0.83
+	REAL Limsupq = 1.2
+	REAL LiminfFr = 5
 	REAL LimsupFr = 15
 	REAL LiminfT = 5
 	REAL LimsupT = 60
@@ -65,11 +65,11 @@ DATA
 	REAL LimsupCb = 5
 	
 	-- Consignas
-	REAL T_sp = 30
-	REAL Cb_sp = 3.3
+	REAL T_sp = 35
+	REAL Cb_sp = 2.7
 	REAL gamma[2] = {10, 10}				"Importancia relativa de los setpoint"
 	-- Variables manipuladas
-	REAL beta[2] =  {0.5, 0.5}				"Penalizacion de cambios"
+	REAL beta[2] =  {2, 2}				"Penalizacion de cambios"
 	
 	-- Parámetros estimador
 	REAL margen_v = 0.5       	   "Rango de variación de las perturbaciones"

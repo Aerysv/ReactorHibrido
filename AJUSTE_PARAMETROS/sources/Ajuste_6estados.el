@@ -32,9 +32,9 @@ COMPONENT Ajuste_6estados (INTEGER nsal = 6)
 		REAL k10_estim = 6.4				"Factor preexponencial (1/min)"
 		REAL k20_estim = 4.84			"Factor preexponencial (1/min)"
 		REAL k30_estim = 8.86			"Factor preexponencial (1/min/mol)"
-		REAL Ea1 = 52.1				"Energía de activacion kJ/mol"
-		REAL Ea2 = 70.0				"Energía de activacion kJ/mol"
-		REAL Ea3 = 65.0				"Energía de activacion kJ/mol"
+		REAL Ea1 = 52.1				"Energía de activacion (kJ/mol)"
+		REAL Ea2 = 70.0				"Energía de activacion (kJ/mol)"
+		REAL Ea3 = 65.0				"Energía de activacion (kJ/mol)"
 		REAL dHrxn1 = -28.75			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn2 = -34.50			"Calor de reaccion (kJ/mol)"
 		REAL dHrxn3 = -40.25			"Calor de reaccion (kJ/mol)"
@@ -58,10 +58,10 @@ COMPONENT Ajuste_6estados (INTEGER nsal = 6)
 		REAL Fr               "Caudal refrigerante (L/min)"
 	
     	-- Salidas medidas del proceso
-		REAL T                 "Temperatura reactor (C)"
-		REAL T0					  "Temperatura entrada reactivos (C)"
-		REAL Tc                "Temperatura refrigerante (C)"
-		REAL Tc0					  "Temperatura entrada refrigerante (C)"
+		REAL T                 "Temperatura reactor"
+		REAL T0					  "Temperatura entrada reactivos"
+		REAL Tc                "Temperatura refrigerante"
+		REAL Tc0					  "Temperatura entrada refrigerante"
 
 		-- Otras variables del modelo
 		REAL Q					"Calor transferido (kJ/mol)"

@@ -13,12 +13,12 @@ EXPERIMENT MPC_OPC ON mpcMHE_OPC.par1
    lim_manip_up[2] = LimsupFr
 
 	-- Constraints process variables
-	lim_con_up[1]  = LimsupT          -- limites temperatura reactor
 	lim_con_low[1] = LiminfT
-	
+	lim_con_up[1]  = LimsupT          -- limites temperatura reactor
+
+	lim_con_low[2] = LiminfCb	
 	lim_con_up[2] = LimsupCb           -- limites Cb
-	lim_con_low[2] = LiminfCb
-	
+
 	-- Llamada al controlador predictivo
 	acc[1] = q
 	acc[2] = Fr

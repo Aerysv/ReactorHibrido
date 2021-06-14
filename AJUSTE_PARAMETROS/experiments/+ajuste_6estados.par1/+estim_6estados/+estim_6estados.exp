@@ -344,12 +344,14 @@ EXPERIMENT Estim_6estados ON Ajuste_6estados.par1
 		--	y_ini[i] = dec_var[10+i]
 		--END FOR
 		--
-
+		REPORT_TABLE("results2.rpt", "Ca Cb Cc Cd T Tc")
 		-- Llamada al integrador
       TIME = 0
 		TSTOP = t_simulacion
 		CINT = 0.0833
   	   INTEG()
+		
+		
 		
 		-- Representacion en el monitor de los valores posteriores a la optimizacion
 		WRITE ("\n\n\t\t------------------- The optimiser succeed, returned the value: %d. \n", infoESnopt)

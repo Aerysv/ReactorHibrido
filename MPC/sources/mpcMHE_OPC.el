@@ -29,7 +29,7 @@ DATA
 	REAL Cb_sp = 3.3
 	
 	-- Variables manipuladas
-	REAL beta[2] =  {0.5, 0.5}		"Penalizacion de cambios"
+	REAL beta[2] =  {2, 2}		"Penalizacion de cambios"
 	REAL gamma[2] = {10, 10}				"Importancia relativa de los setpoint"
 	
 	-- Parámetros estimador
@@ -62,8 +62,8 @@ DECLS
 	BOOLEAN ControlFlag = FALSE
 	
 	DISCR REAL Liminfq = 0.3		"Límite inferior de caudal de reactivos (L/min)"
-	DISCR REAL Limsupq = 1.8		"Límite superior de caudal de reactivos (L/min)"
-	DISCR REAL LiminfFr = 0.83		"Límite inferior de caudal de refrigerante (L/min)"
+	DISCR REAL Limsupq = 1.2		"Límite superior de caudal de reactivos (L/min)"
+	DISCR REAL LiminfFr = 5		"Límite inferior de caudal de refrigerante (L/min)"
 	DISCR REAL LimsupFr = 15		"Límite superior de caudal de refrigerante (L/min)"
 	DISCR REAL LiminfT = 5			"Límite inferior de temperatura del reactor (L/min)"
 	DISCR REAL LimsupT = 60			"Límite superior de temperatura del reactor (L/min)"
@@ -93,8 +93,8 @@ DECLS
 	DISCR REAL error[2]
 	
 -- Acciones de control
-	DISCR REAL uq[Nu] = 1.75	"Acciones de control de reactivos (mol/L)"
-	DISCR REAL uFr[Nu] = 8.51	"Acciones de control de refrigerante (mol/L)"
+	DISCR REAL uq[Nu] = 0.9	"Acciones de control de reactivos (mol/L)"
+	DISCR REAL uFr[Nu] = 9	"Acciones de control de refrigerante (mol/L)"
 	
 OBJECTS 
 

@@ -209,7 +209,7 @@ CONTINUOUS
 -- Costo MHE
 
 		J_costo_m =  ( (Ca/Ca_m -1)**2 + (Cb/Cb_m -1)**2 + \
-						 (T/T_m -1)**2 + (Tc/Tc -1)**2 )  
+						 (T/T_m -1)**2 + (Tc/Tc_m -1)**2 )  
 		-- OJO DEBERÍA SER Tc_m  Y NO Tc
 		--J_costo_m = ((Ca_m - Ca)/(5))**2 + ((Cb_m - Cb)/(5))**2 + \
 		--				((T_m - T)/(40))**2 + ((Tc_m - Tc)/(10))**2

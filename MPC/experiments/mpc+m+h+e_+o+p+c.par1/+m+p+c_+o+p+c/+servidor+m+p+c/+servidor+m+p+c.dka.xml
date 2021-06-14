@@ -7,21 +7,21 @@
  <var id="ControlFlag" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Fr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LiminfCb" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="LiminfFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0.83" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="LiminfFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LiminfT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Liminfq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LimsupCb" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LimsupFr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="15" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="LimsupT" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="60" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Limsupq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="1.8" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Limsupq" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="1.2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Pred_h" type="REAL" category="DATA" inputUnits="min" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="T_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="30" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Tc" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Tc0" type="REAL" category="DISCRETE" inputUnits="C" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="beta[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="beta[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="beta[2]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="2" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="beta_xN" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="beta_xv" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.1" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="gamma[1]" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="10" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
@@ -29,6 +29,16 @@
  <var id="margen_v" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="0.5" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="margen_x" type="REAL" category="DATA" inputUnits="%" inputCandidates="" inputValue="20" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="q" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[1]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[2]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[3]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="state[4]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="uFr[1]" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="9" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="uq[1]" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0.9" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="v_new[1]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="v_new[2]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="v_new[3]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="v_new[4]" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
 </data>
 <info>
  <swmode id=""/>
@@ -55,8 +65,19 @@
  </fileswithfolder>
 </info>
 <simulation_settings version="1.0">
+ <setting id="ACTIVE_LOG" value="TRUE"/>
+ <setting id="ACTIVE_OPTIMISE_CODE" value="FALSE"/>
+ <setting id="ACTIVE_PPR_H5" value="FALSE"/>
+ <setting id="ACTIVE_TRACE" value="TRUE"/>
+ <setting id="ACTIVE_WARN" value="TRUE"/>
+ <setting id="DEFAULT_REPORT_SEPARATOR" value="\t"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_ANY_TIME" value="FALSE"/>
+ <setting id="SETTING_SIM_DETECT_BAD_OPERATION_REFRESH_TIME" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_NAN_INF" value="SEV_NONE"/>
+ <setting id="SETTING_SIM_DETECT_RANGE_VIOLATION" value="SEV_WARNING"/>
+ <setting id="SETTING_SIM_FORCE_STOP_CINT" value="TRUE"/>
 </simulation_settings>
 <specific_opcua>
- <opcuaport id="16703"/>
+ <opcuaport id="16701"/>
 </specific_opcua>
 </DeckSupplierConfig>
