@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <DeckSupplierConfig version="5.3">
 <data>
- <var id="Ca" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
- <var id="Cb" type="REAL" category="DISCRETE" inputUnits="mol/L" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Ca" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
+ <var id="Cb" type="REAL" category="DISCRETE" inputUnits="" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Cb_sp" type="REAL" category="DATA" inputUnits="" inputCandidates="" inputValue="3.3" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="ControlFlag" type="BOOLEAN" category="DISCRETE" inputUnits="" inputCandidates="FALSE*TRUE" inputValue="FALSE" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>
  <var id="Fr" type="REAL" category="DISCRETE" inputUnits="L/min" inputCandidates="" inputValue="0" deckin="PUBLIC" deckout="PUBLIC" control="FALSE" controlValues="" pos="" idFmi="0"/>

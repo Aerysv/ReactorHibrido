@@ -1,10 +1,16 @@
 EXPERIMENT MPC_OPC ON mpcMHE_OPC.par1
    DECLS
+		INTEGER contador = 0
    OBJECTS
    INIT
+	   modeloCON.iniciar()		
+		estadoMHE.iniciar()
    BOUNDS
    BODY
 	
+	IF contador == 0 THEN
+		EXEC_INIT()
+	END IF
 	-- constraints MVs
    lim_manip_low[1] = Liminfq        -- limites  q
 	lim_manip_up[1] = Limsupq

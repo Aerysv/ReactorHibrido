@@ -25,8 +25,8 @@ DATA
 	REAL Pred_h = 60		"Horizonte de predicción (min)"
 		
 	-- Precios del controlador
-	REAL T_sp = 30
-	REAL Cb_sp = 3.3
+	REAL T_sp = 35
+	REAL Cb_sp = 2.6
 	
 	-- Variables manipuladas
 	REAL beta[2] =  {2, 2}		"Penalizacion de cambios"
@@ -50,11 +50,12 @@ DECLS
 	DISCR REAL Fr               "Caudal reFrigerante (L/min)"
 	
     -- Salidas medidas del proceso
-	DISCR REAL T                 "Temperatura reactor (C)"
-	DISCR REAL Tc                "Temperatura reFrigerante (C)"
+	DISCR REAL T = 35                 "Temperatura reactor (C)"
+	DISCR REAL Tc = 25               "Temperatura reFrigerante (C)"
 
 	-- Otras variables del modelo
-	DISCR REAL Ca, Cb				"Concentraciones de las especies (mol/L)"
+	DISCR REAL Ca = 0.05
+	DISCR REAL Cb = 2.5
 	
 -- Variables del problema de optimizacion
 
@@ -69,9 +70,9 @@ DECLS
 	DISCR REAL LimsupT = 60			"Límite superior de temperatura del reactor (L/min)"
 	DISCR REAL LiminfCb = 0			"Límite inferior de concentración de B (L/min)"
 	DISCR REAL LimsupCb = 5			"Límite superior de concentración de B (L/min)"
-	DISCR REAL state[Nx]				--  estimated (state) variables (+ algebraic)
+	DISCR REAL state[4] = {0.05, 2.5, 35, 25}				--  estimated (state) variables (+ algebraic)
 	DISCR REAL u_new[MV*Nu]      	--  Vector of decision variables computed by the MPC + slacks
-	DISCR REAL v_new[Nx]   			--  valores estimados de las perturbaciones
+	DISCR REAL v_new[Nx] = 0   			--  valores estimados de las perturbaciones
 	DISCR REAL acc[MV]				-- Valores actuales de las acciones de control
 	DISCR REAL per[Nd]				-- Valores actuales de las perturbaciones medidas
 	DISCR REAL med[Nm]				-- current measurements
@@ -90,7 +91,7 @@ DECLS
 	DISCR REAL uFrant				"Accion de control anterior"
 	DISCR REAL config[6]			"Configuracion del controlador"
 	DISCR REAL Pred_hh = 60		"Horizonte de predicción (min)"
-	DISCR REAL error[2]
+	DISCR REAL error[2] = 0
 	
 -- Acciones de control
 	DISCR REAL uq[Nu] = 0.9	"Acciones de control de reactivos (mol/L)"
@@ -103,94 +104,5 @@ OBJECTS
 		
 INIT
 
-	-- Condiciones iniciales de las variables de estado
-	Ca = 0.08
-	Cb = 2.3
-	T = 25
-	Tc = 13
 
-	-- constraints MVs
-	lim_manip_low[1] = Liminfq        -- limites  q
-	lim_manip_up[1] = Limsupq
-
-	lim_manip_low[2] = LiminfFr		 -- limites  Fr		
-	lim_manip_up[2] = LimsupFr
-
-	-- Constraints process variables
-	lim_con_up[1]  = LimsupT          -- limites temperatura reactor
-	lim_con_low[1] = LiminfT
-	
-	lim_con_up[2] = LimsupCb           -- limites Cb
-	lim_con_low[2] = LiminfCb
-	
-	-- Initial values MVs
-	FOR (i IN 1,Nu)
-		u_new[MV*(i-1)+1] = uq[i]
-		u_new[MV*(i-1)+2] = uFr[i]
-	END FOR
-	
-	FOR (j IN 1,Ne)
-		u_ant[MV*(j-1)+1] = uq[1]
-		u_ant[MV*(j-1)+2] = uFr[1]			
-	END FOR	
-
-	state[1] = Ca
-	state[2] = Cb										
-	state[3] = T
-	state[4] = Tc
-		
-	acc[1] = q
-	acc[2] = Fr
-		
-	per[1] = T0
-	per[2] = Tc0
-		
-	med[1] = Ca
-	med[2] = Cb									
-	med[3] = T
-	med[4] = Tc	
-	
-	config[1] = T_sp
-	config[2] = Cb_sp
-	config[3] = gamma[1]
-	config[4] = gamma[2]
-	config[5] = beta[1]
-	config[6] = beta[2]	
-		
-	q = uq[1]
-	Fr = uFr[1]
-
-	FOR (j IN 1,Ne+1)		
-		acc_ant[MV*(j-1)+1] = q
-		acc_ant[MV*(j-1)+2] = Fr
-			
-		per_ant[Nd*(j-1)+1] = T0
-		per_ant[Nd*(j-1)+2] = Tc0
-
-		med_ant[Nm*(j-1)+1] = Ca		
-		med_ant[Nm*(j-1)+2] = Cb		
-		med_ant[Nm*(j-1)+3] = T		
-		med_ant[Nm*(j-1)+4] = Tc					
-	END FOR		
-
-	FOR (j IN 1,Ne)		
-		FOR (i IN 1,Nx)
-			x_ant[i,j] = state[i]
-		END FOR		
-	END FOR
-		
-	FOR (i IN 1,Nx)
-		x_Ne[i] = x_ant[i,1]
-		v_new[i] = v_ini
-	END FOR		
-		
-	FOR (i IN 1,2)
-		error[i] = 0
-	END FOR		
-		
--- Initialization of the sensitivities	
-
-   modeloCON.iniciar()		
-	estadoMHE.iniciar()
-	
 END COMPONENT
